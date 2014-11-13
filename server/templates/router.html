@@ -1,0 +1,23 @@
+var {{ routerName }} = function(app){
+    var {{ controllerName }} = require( path.join(dirPaths.controllersDir,'{{ controllerName }}'));
+{%- for apiMethod in apiMethods -%}
+
+    {%- if apiMethod.operations[0].httpMethod |upper == 'GET'  -%}
+        app.get('{{apiMethod.path | replace('{', ':') | replace('}', '') }}',  {{ controllerName }}.get);
+    {%- endif -%}
+
+    {%- if apiMethod.operations[0].httpMethod |upper == 'POST'  -%}
+        app.post('{{apiMethod.path | replace('{', ':') | replace('}', '') }}', {{ controllerName }}.post);
+    {%- endif -%}
+
+    {%- if apiMethod.operations[0].httpMethod |upper == 'PUT'  -%}
+        app.put('{{apiMethod.path}}/:id', {{ controllerName }}.put);
+    {%- endif -%}
+    {%- if apiMethod.operations[0].httpMethod |upper == 'DELETE'  -%}
+        app.delete('{{apiMethod.path}}/:id',{{ controllerName }}.delete);
+    {%- endif -%}
+
+{%- endfor -%}
+    }
+    module.exports = {{ routerName }};
+

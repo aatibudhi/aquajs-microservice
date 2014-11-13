@@ -1,0 +1,52 @@
+var dirPaths = require(process.cwd() + '/server/config/dirPaths'),
+{{modelName }} = require(dirPaths.modelsDir+'{{modelName}}');
+
+var {{ controllerName }} = {
+
+{%- for operation in operations -%}
+
+    {% if operation.httpMethod |upper == 'GET'  %}
+        get: function (req, res) {
+        var html = 'GET method of Controller ' ;
+        {{modelName }};
+        res.send(html);
+    }
+    {%- if loop.length >1 and !loop.last -%}
+         ,
+    {%- endif -%}
+    {%- elseif  operation.httpMethod  |upper == 'POST'  -%}
+    post: function (req, res) {
+        var html = 'POST method of Controller ' ;
+        {{modelName }};
+        res.send(html);
+    }
+    {%- if loop.length >1 and !loop.last -%}
+         ,
+    {%- endif -%}
+
+    {%- elseif operation.httpMethod  |upper == 'PUT'  -%}
+    put: function (req, res) {
+        var html = 'PUT method of Controller ' ;
+        {{modelName }};
+        res.send(html);
+    }
+    {%- if loop.length >1 and !loop.last -%}
+          ,
+    {%- endif -%}
+
+    {%- elseif operation.httpMethod  |upper == 'DELETE'  -%}
+    delete: function (req, res) {
+    var html = 'DELETE method of Controller ' ;
+    {{modelName }};
+    res.send(html);
+    }
+    {%- if loop.length >1 and !loop.last -%}
+         ,
+    {%- endif -%}
+    {%- endif -%}
+
+{%- endfor -%}
+
+}
+module.exports = {{ controllerName }};
+

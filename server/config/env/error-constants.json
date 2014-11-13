@@ -1,0 +1,23 @@
+{
+  "invalidFieldValue": {
+    "status": 400,
+    "code": 40001,
+    "property": 40001,
+    "message": "Invalid Parameter Value",
+    "moreinfo": "Invalid Parameter Value"
+  },
+  "requiredFieldMissing": {
+    "status": 400,
+    "code": 40004,
+    "property": "",
+    "message": "Enter a value for all required fields",
+    "moreinfo": "Enter a value for all required fields"
+  },
+  "maxCharExceeds": {
+    "status": 400,
+    "code": 40005,
+    "property": "",
+    "message": "The number of characters exceeded",
+    "moreinfo": "The number of characters exceeded"
+  }
+}

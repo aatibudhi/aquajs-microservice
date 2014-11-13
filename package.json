@@ -1,0 +1,42 @@
+{
+  "name": "@aqua/aquajs-microservice",
+  "version": "0.0.25",
+  "scripts": {
+    "start": "node server.js",
+    "poststart": "grunt coverage",
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:equinix/gse-common.git"
+  },
+  "dependencies": {
+    "@aqua/aquajs": "latest",
+    "@aqua/aquajs-logger": "latest",
+    "@aqua/aquajs-swagger-ui": "latest",
+    "async": "latest",
+    "sails-mongo": "latest",
+    "waterline": "latest",
+    "persist": "latest",
+    "body-parser": "latest",
+    "chai": "latest",
+    "compression": "latest",
+    "connect-flash": "latest",
+    "cookie-parser": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "lodash": "latest",
+    "method-override": "latest",
+    "morgan": "latest",
+    "swagger-express": "latest",
+    "view-helpers": "latest",
+    "winston": "latest"
+  },
+  "devDependencies": {
+    "grunt-mocha-istanbul": "^2.1.0",
+    "grunt-mocha-test": "^0.12.1",
+    "istanbul": "^0.3.2",
+    "mocha": "^1.21.5",
+    "sinon-chai": "^2.6.0"
+  }
+}
