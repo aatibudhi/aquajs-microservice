@@ -8,22 +8,49 @@ var express = require('express'),
     AquaJsLogger = require('@aqua/aquajs-logger'),
     swagger = require("swagger-express"),
     chai = require("chai"),
-    async = require("async"),
-    Waterline = require('waterline');
+    async = require("async");
 
 
 
 module.exports = function (config) {
     var app = express()
 
+    function bootstrapModels() {
+        var models_path = dirPaths.serverDir + 'models';
+            var walk = function (models_path) {
+                fs.readdirSync(models_path).forEach(function (file) {
+                    var newPath = models_path + '/' + file
+                    var stat = fs.statSync(newPath);
+                    if (stat.isFile()) {
+                        if (/(.*)\.(js$|coffee$)/.test(file)) {
+                            require(newPath);
+                        }
+                    } else if (stat.isDirectory()) {
+                        walk(newPath);
+                    }
+                });
+            };
+            walk(models_path);
+    }
+
+    bootstrapModels();
+
 //Setup the Express related properties
     require('../express')(app)
     //init logger property
     initLogger(config.app.logconfpath);
-    initORM(config.enableWaterline,config.enablePersist,config.app.dbConfList,app);
 
 //Swagger related properties will get initialized based on the apiServer flag
-    initSwagger(app);
+    if ("true" == config.apiServer) {
+        //init chai test case variables
+        global.expect = chai.expect;
+        global.AssertionError = chai.AssertionError;
+        global.Assertion = chai.Assertion;
+        global.assert = chai.assert;
+
+        //init swagger
+        //initSwagger(app);
+    }
 
 //Batch process related properties will get initialized based on the batchProcessServer
     if ("true" == config.batchProcessServer) {
@@ -50,26 +77,48 @@ function initLogger(logpath) {
 }
 
 function initSwagger(app) {
-
+    var templateGen = require( 'templateGen');
     // Serve up swagger ui at /swagger via static route
-    var docs_handler = express.static(path.join(__dirname,'..','..','..','node_modules','@aqua','aquajs-swagger-ui','dist'));
+    var docs_handler = express.static(nodeModulesDir + 'swagger-ui/dist');
     var setSwaggerContext = true;
     var pathList = [];
 
-    var list = fs.readdirSync(dirPaths.serverDir + 'schema')
+    var list = fs.readdirSync(serverDir + 'schema')
     list.forEach(function (file) {
-        pathList.push(dirPaths.serverDir + 'schema/' + file);
+        pathList.push(serverDir + 'schema/' + file);
     });
-	app.get(/^\/apidoc(\/.*)?$/, function (req, res, next) {
+
+    async.parallel([
+        function(callback) {
+            templateGen.genControllers(pathList, function(err) {
+                callback();
+            });
+        },
+
+        function(callback) {
+            templateGen.genModels(pathList, modelsDir, function(err) {
+                callback();
+            });
+        },
+
+        function(callback) {
+            templateGen.genControllerTestCases (pathList, modelsDir, function(err) {
+                callback();
+            });
+        }
+
+    ], function(err) {
+
+        app.get(/^\/apidoc(\/.*)?$/, function (req, res, next) {
             if (setSwaggerContext) {
                 var urlPath = req.protocol + "://" + req.get('host');
                 app.use(swagger.init(app, {
-                    apiVersion: '1.0',
-                    swaggerVersion: '1.0',
+                    apiVersion: '2.0',
+                    swaggerVersion: '2.0',
                     basePath: urlPath,
                     swaggerURL: '/swagger',
                     swaggerJSON: '/api-docs.json',
-                    swaggerUI: path.join(__dirname,'..','..','..','node_modules','@aqua','aquajs-swagger-ui','dist'),
+                    swaggerUI: nodeModulesDir + 'swagger-ui/dist/',
                     apis: pathList
                 }));
                 // Configures the app's base path and api version.
@@ -86,41 +135,7 @@ function initSwagger(app) {
             return docs_handler(req, res, next);
 
         });
-}
-function initORM(enableWaterline,enablePersist,dbConfList,app){
 
-    async.each(dbConfList, function(eachConfig, callback) {
-        if(enableWaterline){
-            var orm = new Waterline();
-            var models_path = dirPaths.serverDir + 'models';
-            fs.readdirSync(models_path).forEach(function (file) {
-                var newPath = models_path + '/' + file
-                var stat = fs.statSync(newPath);
-                if (stat.isFile()) {
-                    try {
-                       orm.loadCollection(require(newPath));
-                    }
-                    catch(ex){
-                        console.log(ex);
-                    }
-                }
-            });
-            orm.initialize(eachConfig, function(err, models) {
-                app.models = models.collections;
-                app.connections = models.connections;
-            });
-        }
-        if(enablePersist){
-            //code for persist model initialization
-        }
-        callback('finished the model initialization');
-    }, function(err){
-        if( err ) {
-            console.log('A file failed to process');
-        } else {
-            console.log('All files have been processed successfully');
-        }
     });
 }
-
 
