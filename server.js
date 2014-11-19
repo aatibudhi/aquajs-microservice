@@ -17,7 +17,7 @@ GLOBAL.dirPaths = require( process.cwd()+'/server/config/dirPaths');
 
 var path = require('path'),
     express = require('express'),
-    aqua = require('@aqua/aquajs'),
+    aqua = require('aquajs'),
     http = require('http'),
     bodyParser = require('body-parser'),
     url = require("url"),
@@ -31,9 +31,12 @@ var path = require('path'),
 //Load NPM modules to memory using dependable's
      var aqua = aqua.app('aquajs'),
 //initialize the logger
-     logger = require('@aqua/aquajs-logger').getLogger();
+     logger = require('aquajs-logger').getLogger();
 
-
+app.use(function (err, req, res, next) {
+    console.log(err);
+    next(err);
+});
 
 //Process uncaught Exception Before Exiting the program
 process.on('uncaughtException', function (err) {
