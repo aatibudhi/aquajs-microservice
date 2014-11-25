@@ -1,50 +1,36 @@
-var dirPaths = require(process.cwd() + '/server/config/dirPaths'),
-{{modelName }} = require(dirPaths.modelsDir+'{{modelName}}');
+var thisAPImpl = null;
+try {
+thisAPImpl = require("../impls/{{ controller }}");
+}
+catch (e) {
+// No implementation has been provided yet..
+// But that's OK because each end-point defined below will remind us...
+}
 
 var {{ controllerName }} = {
 
-{%- for operation in operations -%}
+{%- for apiMethod in apiMethods -%}
+{%- for operation in apiMethod.operations -%}
 
-    {% if operation.httpMethod |upper == 'GET'  %}
-        get: function (req, res) {
-        var html = 'GET method of Controller ' ;
-        {{modelName }};
-        res.send(html);
-    }
-    {%- if loop.length >1 and !loop.last -%}
-         ,
-    {%- endif -%}
-    {%- elseif  operation.httpMethod  |upper == 'POST'  -%}
-    post: function (req, res) {
-        var html = 'POST method of Controller ' ;
-        {{modelName }};
-        res.send(html);
-    }
-    {%- if loop.length >1 and !loop.last -%}
-         ,
-    {%- endif -%}
+{{ operation.nickname }}: function (req, res) {
+try {
+return thisAPImpl.{{ operation.nickname }}(req, res);
+} catch(e) {
+var html = '{{ operation.httpMethod }} : {{ operation.summary}} <br/><br/>' ;
+html += 'exports.<b>.{{ operation.nickname }}</b>.(req, res) {...}<br/><br/>';
+html += 'should be exposed from within <b>server/implementation/{{ controller }}.js</b><br/><br/>';
+html += 'you can access <b>app.models[...]</b> to manipulate your data...';
+res.send(html);
+}
+}
+{%- if loop.length >1 and !loop.last -%}
+,
+{%- endif -%}
 
-    {%- elseif operation.httpMethod  |upper == 'PUT'  -%}
-    put: function (req, res) {
-        var html = 'PUT method of Controller ' ;
-        {{modelName }};
-        res.send(html);
-    }
-    {%- if loop.length >1 and !loop.last -%}
-          ,
-    {%- endif -%}
-
-    {%- elseif operation.httpMethod  |upper == 'DELETE'  -%}
-    delete: function (req, res) {
-    var html = 'DELETE method of Controller ' ;
-    {{modelName }};
-    res.send(html);
-    }
-    {%- if loop.length >1 and !loop.last -%}
-         ,
-    {%- endif -%}
-    {%- endif -%}
-
+{%- endfor -%}
+{%- if loop.length >1 and !loop.last -%}
+,
+{%- endif -%}
 {%- endfor -%}
 
 }

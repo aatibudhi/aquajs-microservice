@@ -1,23 +1,25 @@
 var {{ routerName }} = function(app){
-    var {{ controllerName }} = require( path.join(dirPaths.controllersDir,'{{ controllerName }}'));
+var {{ controllerName }} = require( path.join(dirPaths.controllersDir,'{{ controllerName }}'));
 {%- for apiMethod in apiMethods -%}
+{%- for operation in apiMethod.operations -%}
 
-    {%- if apiMethod.operations[0].httpMethod |upper == 'GET'  -%}
-        app.get('{{apiMethod.path | replace('{', ':') | replace('}', '') }}',  {{ controllerName }}.get);
-    {%- endif -%}
+{%- if operation.httpMethod |upper == 'GET'  -%}
+app.get('{{ apiMethod.path }}',  {{ controllerName }}.{{ operation.nickname }});
+{%- endif -%}
 
-    {%- if apiMethod.operations[0].httpMethod |upper == 'POST'  -%}
-        app.post('{{apiMethod.path | replace('{', ':') | replace('}', '') }}', {{ controllerName }}.post);
-    {%- endif -%}
+{%- if operations.httpMethod |upper == 'POST'  -%}
+app.post('{{ apiMethod.path }}', {{ controllerName }}.{{ operation.nickname }});
+{%- endif -%}
 
-    {%- if apiMethod.operations[0].httpMethod |upper == 'PUT'  -%}
-        app.put('{{apiMethod.path}}/:id', {{ controllerName }}.put);
-    {%- endif -%}
-    {%- if apiMethod.operations[0].httpMethod |upper == 'DELETE'  -%}
-        app.delete('{{apiMethod.path}}/:id',{{ controllerName }}.delete);
-    {%- endif -%}
+{%- if operation.httpMethod |upper == 'PUT'  -%}
+app.put('{{apiMethod.path}}/:id', {{ controllerName }}.{{ operation.nickname }});
+{%- endif -%}
+{%- if operation.httpMethod |upper == 'DELETE'  -%}
+app.delete('{{apiMethod.path}}/:id',{{ controllerName }}.{{ operation.nickname }});
+{%- endif -%}
 
 {%- endfor -%}
-    }
-    module.exports = {{ routerName }};
+{%- endfor -%}
+}
+module.exports = {{ routerName }};
 
