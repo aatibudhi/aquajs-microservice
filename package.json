@@ -11,9 +11,9 @@
     "url": "git://github.com:equinix/gse-common.git"
   },
   "dependencies": {
-    "aquajs": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs/latest",
-    "aquajs-logger": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs-logger/latest",
-    "aquajs-swagger-ui": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs-swagger-ui/latest",
+    "aquajs": "aquajs/aquajs",
+    "aquajs-logger": "aquajs/aquajs-logger",
+    "aquajs-swagger-ui": "aquajs/aquajs-swagger-ui",
     "async": "latest",
     "sails-mongo": "latest",
     "waterline": "latest",
