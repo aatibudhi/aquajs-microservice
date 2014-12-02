@@ -1,6 +1,6 @@
 {
   "name": "aquajs-microservice",
-  "version": "0.0.32",
+  "version": "0.0.38",
   "scripts": {
     "start": "node server.js",
     "poststart": "grunt coverage",
@@ -11,9 +11,9 @@
     "url": "git://github.com:equinix/gse-common.git"
   },
   "dependencies": {
-    "aquajs": "aquajs/aquajs",
-    "aquajs-logger": "aquajs/aquajs-logger",
-    "aquajs-swagger-ui": "aquajs/aquajs-swagger-ui",
+    "aquajs": "http://sv21xecxapid01.corp.equinix.com:8080/package/aquajs/latest",
+    "aquajs-logger": "http://sv21xecxapid01.corp.equinix.com:8080/package/aquajs-logger/latest",
+    "aquajs-swagger-ui": "http://sv21xecxapid01.corp.equinix.com:8080/package/aquajs-swagger-ui/latest",
     "async": "latest",
     "sails-mongo": "latest",
     "waterline": "latest",
