@@ -70,12 +70,12 @@
     "moreinfo": "The servers are up, but overloaded with requests. Try again later."
   },
   "gatewayTimeout": {
-  "status": 500,
-  "code": 504,
-  "property": "",
-  "message": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later.",
-  "moreinfo": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later."
-},
+    "status": 500,
+    "code": 504,
+    "property": "",
+    "message": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later.",
+    "moreinfo": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later."
+  },
   "OK": {
     "status": 200,
     "code": 200,
@@ -118,4 +118,4 @@
     "message": "There is no new data to return.",
     "moreinfo": "Performed a conditional GET request and access is allowed, but the document has not been modified."
   }
-   }
+}
