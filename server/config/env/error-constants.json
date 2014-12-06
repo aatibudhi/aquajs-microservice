@@ -1,10 +1,11 @@
 {
   "OK": {
     "status": 200,
+    "code": 200,
     "property": "",
     "message": "The request was successful.",
     "moreinfo": "The request was successful and the response body contains the representation requested."
-  }, "code": 200,
+  },
 
   "SUCCESS": {
     "status": 200,

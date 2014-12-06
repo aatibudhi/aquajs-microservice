@@ -34,7 +34,6 @@ var tests = [
   {
     testName: '200 test',
     statusName: 'OK'
-
   },
   {
     testName: '201 test',
@@ -107,7 +106,7 @@ var tests = [
 it('should verify all status codes', function (done) {
   var count = tests.length;
 
-  async.timesSeries(count, function (i, next) {
+  async.timesSeries(count, function(i, next) {
 
     var statusCode = statusCodes[tests[i].statusName].code;
 
@@ -124,4 +123,3 @@ it('should verify all status codes', function (done) {
 
 
 });
-
