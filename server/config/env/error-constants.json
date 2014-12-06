@@ -1,4 +1,46 @@
 {
+  "OK": {
+    "status": 200,
+    "property": "",
+    "message": "The request was successful.",
+    "moreinfo": "The request was successful and the response body contains the representation requested."
+  }, "code": 200,
+
+  "SUCCESS": {
+    "status": 200,
+    "code": 201,
+    "property": "",
+    "message": "The request was successful.",
+    "moreinfo": "The request was successful, we updated the resource and the response body contains the representation."
+  },
+  "ACCEPTED": {
+    "status": 200,
+    "code": 202,
+    "property": "",
+    "message": "The request has been accepted for further processing, which will be completed sometime later.",
+    "moreinfo": "The request has been accepted for further processing, which will be completed sometime later."
+  },
+  "noContent": {
+    "status": 200,
+    "code": 204,
+    "property": "",
+    "message": "The request was successful; the resource was deleted.",
+    "moreinfo": "The server has fulfilled the request but does not need to return an entity-body, and might want to return updated metainformation. The response MAY include new or updated metainformation in the form of entity-headers, which if present SHOULD be associated with the requested variant."
+  },
+  "FOUND": {
+    "status": 300,
+    "code": 302,
+    "property": "",
+    "message": "A common redirect response; you can GET the representation at the URI in the Location response header",
+    "moreinfo": "A common redirect response; you can GET the representation at the URI in the Location response header"
+  },
+  "notModified": {
+    "status": 300,
+    "code": 304,
+    "property": "",
+    "message": "There is no new data to return.",
+    "moreinfo": "Performed a conditional GET request and access is allowed, but the document has not been modified."
+  },
   "badRequest": {
     "status": 400,
     "code": 400,
@@ -75,47 +117,5 @@
     "property": "",
     "message": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later.",
     "moreinfo": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later."
-  },
-  "OK": {
-    "status": 200,
-    "code": 200,
-    "property": "",
-    "message": "The request was successful.",
-    "moreinfo": "The request was successful and the response body contains the representation requested."
-  },
-  "SUCCESS": {
-    "status": 200,
-    "code": 201,
-    "property": "",
-    "message": "The request was successful.",
-    "moreinfo": "The request was successful, we updated the resource and the response body contains the representation."
-  },
-  "ACCEPTED": {
-    "status": 200,
-    "code": 202,
-    "property": "",
-    "message": "The request has been accepted for further processing, which will be completed sometime later.",
-    "moreinfo": "The request has been accepted for further processing, which will be completed sometime later."
-  },
-  "noContent": {
-    "status": 200,
-    "code": 204,
-    "property": "",
-    "message": "The request was successful; the resource was deleted.",
-    "moreinfo": "The server has fulfilled the request but does not need to return an entity-body, and might want to return updated metainformation. The response MAY include new or updated metainformation in the form of entity-headers, which if present SHOULD be associated with the requested variant."
-  },
-  "FOUND": {
-    "status": 300,
-    "code": 302,
-    "property": "",
-    "message": "A common redirect response; you can GET the representation at the URI in the Location response header",
-    "moreinfo": "A common redirect response; you can GET the representation at the URI in the Location response header"
-  },
-  "notModified": {
-    "status": 300,
-    "code": 304,
-    "property": "",
-    "message": "There is no new data to return.",
-    "moreinfo": "Performed a conditional GET request and access is allowed, but the document has not been modified."
   }
 }
