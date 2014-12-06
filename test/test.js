@@ -114,11 +114,12 @@ it('should verify all status codes', function (done) {
     var url = baseurl + '/' + statusCode;
 
     request(url, function (err, res, body) {
+      if (err) return next(err);
       verify(res, statusCode, next);
     });
 
-  }, function () {
-    done();
+  }, function (err) {
+    done(err);
   });
 
 
