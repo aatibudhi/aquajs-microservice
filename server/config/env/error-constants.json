@@ -1,23 +1,122 @@
 {
-  "invalidFieldValue": {
+  "OK": {
+    "status": 200,
+    "code": 200,
+    "property": "",
+    "message": "The request was successful.",
+    "moreinfo": "The request was successful and the response body contains the representation requested."
+  },
+
+  "SUCCESS": {
+    "status": 200,
+    "code": 201,
+    "property": "",
+    "message": "The request was successful.",
+    "moreinfo": "The request was successful, we updated the resource and the response body contains the representation."
+  },
+  "ACCEPTED": {
+    "status": 200,
+    "code": 202,
+    "property": "",
+    "message": "The request has been accepted for further processing, which will be completed sometime later.",
+    "moreinfo": "The request has been accepted for further processing, which will be completed sometime later."
+  },
+  "noContent": {
+    "status": 200,
+    "code": 204,
+    "property": "",
+    "message": "The request was successful; the resource was deleted.",
+    "moreinfo": "The server has fulfilled the request but does not need to return an entity-body, and might want to return updated metainformation. The response MAY include new or updated metainformation in the form of entity-headers, which if present SHOULD be associated with the requested variant."
+  },
+  "FOUND": {
+    "status": 300,
+    "code": 302,
+    "property": "",
+    "message": "A common redirect response; you can GET the representation at the URI in the Location response header",
+    "moreinfo": "A common redirect response; you can GET the representation at the URI in the Location response header"
+  },
+  "notModified": {
+    "status": 300,
+    "code": 304,
+    "property": "",
+    "message": "There is no new data to return.",
+    "moreinfo": "Performed a conditional GET request and access is allowed, but the document has not been modified."
+  },
+  "badRequest": {
     "status": 400,
-    "code": 40001,
-    "property": 40001,
+    "code": 400,
+    "property": "",
+    "message": "The request was invalid or cannot be otherwise served",
+    "moreinfo": "An accompanying error message will explain further. For security reasons, requests without authentication are considered invalid and will yield this response."
+  },
+  "UNAUTHORIZED": {
+    "status": 400,
+    "code": 401,
+    "property": "",
     "message": "Invalid Parameter Value",
-    "moreinfo": "Invalid Parameter Value"
+    "moreinfo": " Change set validate/deploy fails with error invalid parameter value if it contains a profile with View All Data permission"
   },
-  "requiredFieldMissing": {
+  "FORBIDDEN": {
     "status": 400,
-    "code": 40004,
+    "code": 403,
     "property": "",
-    "message": "Enter a value for all required fields",
-    "moreinfo": "Enter a value for all required fields"
+    "message": "The request has been refused",
+    "moreinfo": "See the accompanying message for the specific reason (most likely for exceeding rate limit)"
   },
-  "maxCharExceeds": {
+  "notFound": {
     "status": 400,
-    "code": 40005,
+    "code": 404,
     "property": "",
-    "message": "The number of characters exceeded",
-    "moreinfo": "The number of characters exceeded"
+    "message": "Invalid Parameter Value",
+    "moreinfo": "The URI requested is invalid or the resource requested does not exists."
+  },
+  "invalidRequest": {
+    "status": 400,
+    "code": 406,
+    "property": "",
+    "message": "The request specified an invalid format",
+    "moreinfo": "The request specified an invalid format"
+  },
+  "resourceGone": {
+    "status": 400,
+    "code": 410,
+    "property": "",
+    "message": "This resource is gone",
+    "moreinfo": "Used to indicate that an API endpoint has been turned off"
+  },
+  "manyRequests": {
+    "status": 400,
+    "code": 429,
+    "property": "",
+    "message": "request cannot be served due to exceeding the limit ",
+    "moreinfo": " request cannot be served due to the application’s rate limit having been exhausted for the resource."
+  },
+  "serverError": {
+    "status": 500,
+    "code": 500,
+    "property": "",
+    "message": "Something is horribly wrong",
+    "moreinfo": "Something went wrong. Please try after some time"
+  },
+  "badGateway": {
+    "status": 500,
+    "code": 502,
+    "property": "",
+    "message": "The service is down or being upgraded. Try again later",
+    "moreinfo": "The proxy server received an invalid response from an upstream server."
+  },
+  "serviceUnavailable": {
+    "status": 500,
+    "code": 503,
+    "property": "",
+    "message": "The service is up, but overloaded with requests. Try again later.",
+    "moreinfo": "The servers are up, but overloaded with requests. Try again later."
+  },
+  "gatewayTimeout": {
+    "status": 500,
+    "code": 504,
+    "property": "",
+    "message": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later.",
+    "moreinfo": " Servers are up, but the request couldn’t be serviced due to some failure within our stack. Try again later."
   }
 }
