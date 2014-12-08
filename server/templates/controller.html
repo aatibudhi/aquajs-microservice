@@ -1,6 +1,6 @@
-var thisAPImpl = null;
+var {{ controllerName }}Impl = null;
 try {
-thisAPImpl = require("../impls/{{ controller }}");
+{{ serviceImplName }} = require("../impls/{{ serviceImplName }}");
 }
 catch (e) {
 // No implementation has been provided yet..
@@ -13,15 +13,8 @@ var {{ controllerName }} = {
 {%- for operation in apiMethod.operations -%}
 
 {{ operation.nickname }}: function (req, res) {
-try {
-return thisAPImpl.{{ operation.nickname }}(req, res);
-} catch(e) {
-var html = '{{ operation.httpMethod }} : {{ operation.summary}} <br/><br/>' ;
-html += 'exports.<b>.{{ operation.nickname }}</b>.(req, res) {...}<br/><br/>';
-html += 'should be exposed from within <b>server/implementation/{{ controller }}.js</b><br/><br/>';
-html += 'you can access <b>app.models[...]</b> to manipulate your data...';
-res.send(html);
-}
+    var response = {{ serviceImplName }}.{{ operation.nickname }}(req, res);
+    res.send(response);
 }
 {%- if loop.length >1 and !loop.last -%}
 ,
