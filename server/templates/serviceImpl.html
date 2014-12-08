@@ -1,0 +1,33 @@
+var {{ serviceImplName }} = {
+
+{%- for apiMethod in apiMethods -%}
+{%- for operation in apiMethod.operations -%}
+
+{{ operation.nickname }}: function (req, res) {
+try {
+    {%- for model in modelNames -%}
+        {{model}};
+    {%- endfor -%}
+//code to call the pre and post methods of models
+return "successfully returned data from data access object layer ";
+} catch(e) {
+var html = '{{ operation.httpMethod }} : {{ operation.summary}} <br/><br/>' ;
+html += 'exports.<b>.{{ operation.nickname }}</b>.(req, res) {...}<br/><br/>';
+html += 'should be exposed from within <b>server/implementation/{{ controller }}.js</b><br/><br/>';
+html += 'you can access <b>app.models[...]</b> to manipulate your data...';
+return html;
+}
+}
+{%- if loop.length >1 and !loop.last -%}
+,
+{%- endif -%}
+
+{%- endfor -%}
+{%- if loop.length >1 and !loop.last -%}
+,
+{%- endif -%}
+{%- endfor -%}
+
+}
+module.exports = {{ serviceImplName }};
+
