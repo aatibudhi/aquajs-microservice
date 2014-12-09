@@ -37,7 +37,7 @@ module.exports = function (config) {
 function initScheduler(schedulerconfpath, app) {
     var cronMethods = require(serverDir + 'aquajs-cli/scheduler/cron-methods.js');
     var config = require(schedulerconfpath);
-    var scheduler = require('@aqua/aquajs-scheduler');
+    var scheduler = require('aquajs-scheduler');
     scheduler.init(config, cronMethods);
     scheduler.enableSchedulerUI(app);
     scheduler.schedule();
@@ -52,7 +52,7 @@ function initLogger(logpath) {
 function initSwagger(app) {
 
     // Serve up swagger ui at /swagger via static route
-    var docs_handler = express.static(path.join(__dirname,'..','..','..','node_modules','@aqua','aquajs-swagger-ui','dist'));
+    var docs_handler = express.static(path.join(__dirname,'..','..','..','node_modules','aquajs-swagger-ui','dist'));
     var setSwaggerContext = true;
     var pathList = [];
 
