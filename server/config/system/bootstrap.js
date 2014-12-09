@@ -69,7 +69,7 @@ function initSwagger(app) {
                     basePath: urlPath,
                     swaggerURL: '/swagger',
                     swaggerJSON: '/api-docs.json',
-                    swaggerUI: path.join(__dirname,'..','..','..','node_modules','@aqua','aquajs-swagger-ui','dist'),
+                    swaggerUI: path.join(__dirname,'..','..','..','node_modules','aquajs-swagger-ui','dist'),
                     apis: pathList
                 }));
                 // Configures the app's base path and api version.
