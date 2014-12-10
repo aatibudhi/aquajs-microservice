@@ -32,7 +32,9 @@
     "morgan": "latest",
     "swagger-express": "latest",
     "view-helpers": "latest",
-    "winston": "latest"
+    "winston": "latest",
+    "swig": "^1.4.2",
+    "mailgun-js": "^0.6.7"
   },
   "devDependencies": {
     "grunt-mocha-istanbul": "^2.1.0",
