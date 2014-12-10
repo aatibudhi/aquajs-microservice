@@ -5,7 +5,8 @@
     "start": "node server.js",
     "poststart": "grunt coverage",
     "test": "grunt test",
-    "httptest": "mocha -R spec test/test.js"
+    "httptest": "mocha -R spec test/test.js",
+    "emailtest": "mocha -R spec server/test/emailtest.js"
   },
   "repository": {
     "type": "git",
