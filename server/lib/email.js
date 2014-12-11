@@ -28,8 +28,11 @@ function send(template, data, mail, callback) {
   render(template, data, function (err, message) {
     if (err) return callback(err);
 
-    mail.text = message;
-
+    if (mail.format == 'text') {
+      mail.text = message;
+    } else {
+      mail.html = message;
+    }
     mailgun.messages().send(mail, function (err, body) {
       if (err) return callback(err);
 
