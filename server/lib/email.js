@@ -4,8 +4,13 @@ var
   templatePath = '.',
   api_key = 'key-c02f846994b43bd479849ad8132a5b82',
   domain = 'sandboxc83f6a95ec1f4b0d97d66e391dbe6d9c.mailgun.org',
-  mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+  mailgun = require('mailgun-js')({apiKey: api_key, domain: domain}),
+  loggerConfig = require('../config/env/log_config.json'),
+  logger = require('aquajs-logger'),
+  log;
 
+logger.init(loggerConfig);
+log = logger.getLogger();
 
 module.exports = {
   setTemplatePath: setTemplatePath,
@@ -33,8 +38,12 @@ function send(template, data, mail, callback) {
     } else {
       mail.html = message;
     }
+
     mailgun.messages().send(mail, function (err, body) {
-      if (err) return callback(err);
+      if (err) {
+        log.info('error sending message to: %s (error: %s, statusCode: %s', mail.to, err.message, err.statusCode);
+        return callback(err);
+      }
 
       // a successful response body looks like this:
       // {
