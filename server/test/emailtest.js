@@ -3,10 +3,17 @@ var assert = require('assert'),
   path = require('path'),
   templatePath = path.join(process.cwd(), 'server/templates/email'),
   fs = require('fs'),
-  renderedPath = path.join(__dirname, 'rendered-templates');
+  renderedPath = path.join(__dirname, 'rendered-templates'),
+  loggerConfig = require('../config/env/log_config.json'),
+  logger = require('aquajs-logger'),
+  log;
 
 
 before(function () {
+  // init logging
+  logger.init(loggerConfig);
+  log = logger.getLogger();
+
   email.setTemplatePath(templatePath);
 });
 
@@ -51,10 +58,12 @@ describe('send email tests', function () {
       format: 'html'
     };
 
+    log.info('[emailtest] sending a test email');
+
     email.send('welcome', templateContext, mailContext, function (err, success) {
       assert.ifError(err);
       assert(success);
-      done();
+      done(err);
     });
 
   });
