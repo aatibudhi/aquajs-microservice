@@ -1,0 +1,208 @@
+{
+  "invalidParameterValue": {
+    "status": 400,
+    "code": 40001,
+    "property": "",
+    "message": "Invalid Parameter Value",
+    "moreinfo": "Change set validate/deploy fails with error invalid parameter value if it contains a profile with View All Data permission"
+  },
+  "invalidVLANValue": {
+    "status": 400,
+    "code": 40002,
+    "property": "",
+    "message": "The value of VLAN should be between 1 and 4095",
+    "moreinfo": "The value of VLAN should be between 1 and 4095"
+  },
+  "samePortPrimarySecondary": {
+    "status": 400,
+    "code": 40003,
+    "property": "",
+    "message": "Cannot select the same port for Primary and Secondary Virtual Circuit",
+    "moreinfo": "Cannot select the same port for Primary and Secondary Virtual Circuit"
+  },
+  "requiredFieldMissing": {
+    "status": 400,
+    "code": 40004,
+    "property": "",
+    "message": "Enter a value for all required fields",
+    "moreinfo": "Enter a value for all required fields"
+  },
+  "maxCharExceeds": {
+    "status": 400,
+    "code": 40005,
+    "property": "",
+    "message": "The number of characters exceeded",
+    "moreinfo": "The number of characters exceeded please reenter the minimum required characters"
+  },
+  "samePrimarySecondaryService": {
+    "status": 400,
+    "code": 40006,
+    "property": "",
+    "message": "Cannot select the same  service name for Primary and Secondary Service",
+    "moreinfo": "Cannot select the same  service name for Primary and Secondary Service change the service name at least for one"
+  },
+  "invalidFieldValue": {
+    "status": 400,
+    "code": 40007,
+    "property": "",
+    "message": "Invalid Field Value",
+    "moreinfo": "Invalid Field Value please insert valid field value"
+  },
+  "invalidVCDeleteBySeller": {
+    "status": 400,
+    "code": 40008,
+    "property": "",
+    "message": "Virtual Circuit cannot be deleted by seller as it is not deleted by the buyer",
+    "moreinfo": "Virtual Circuit cannot be deleted by seller as it is not deleted by the buyer"
+  },
+  "appError": {
+    "status": 400,
+    "code": 40009,
+    "property": "",
+    "message": "Application specific error",
+    "moreinfo": "Application specific error"
+  },
+  "invalidGruntType": {
+    "status": 400,
+    "code": 400010,
+    "property": "",
+    "message": "Invalid value for grant_type",
+    "moreinfo": "Invalid value for grant_type. The acceptable value is \"password\""
+  },
+  "authenticationFailed": {
+    "status": 400,
+    "code": 400101,
+    "property": "",
+    "message": "Authentication failed. Invalid username or password",
+    "moreinfo": "Authentication unsuccessful please check username and password"
+  },
+  "tokenExpired": {
+    "status": 400,
+    "code": 40102,
+    "property": "",
+    "message": "Token Expired. Login again",
+    "moreinfo": "Ooops token Expired  please login again"
+  },
+  "invalidAPIKey": {
+    "status": 400,
+    "code": 40103,
+    "property": "",
+    "message": "Invalid API Key",
+    "moreinfo": "Invalid API Key"
+  },
+  "invalidAccessToken": {
+    "status": 400,
+    "code": 40104,
+    "property": "",
+    "message": "Invalid Access Token",
+    "moreinfo": "Invalid Access Token"
+  },
+  "authenticationAccessToken": {
+    "status": 400,
+    "code": 40105,
+    "property": "",
+    "message": "No previlage to perform the operation",
+    "moreinfo": "User doesn't have sufficient previlage to perform the operation"
+  },
+  "executionToken": {
+    "status": 400,
+    "code": 40301,
+    "property": "",
+    "message": "Execute access forbidden",
+    "moreinfo": "Execute access forbidden please check permission to access"
+  },
+  "accessForbidden": {
+    "status": 400,
+    "code": 40302,
+    "property": "",
+    "message": "Read access forbidden",
+    "moreinfo": "The resource being accessed does not have read access set or Directory browsing is not enabled when it should be or The default document specified is either not correc"
+  },
+  "writeAccessForbidden": {
+    "status": 400,
+    "code": 40303,
+    "property": "",
+    "message": "Write access forbidden",
+    "moreinfo": "This can happen if you attempt to upload to or modify a file in a directory that does not allow write access."
+  },
+  "errorSSL": {
+    "status": 400,
+    "code": 40304,
+    "property": "",
+    "message": " SSL required",
+    "moreinfo": "Require a secure channel (SSL) option to be enabled."
+  },
+  "requiredSSL": {
+    "status": 400,
+    "code": 40305,
+    "property": "",
+    "message": "SSL 128 required",
+    "moreinfo": "SSL 128 Required Error Occurs with Require Secure Channel Option Disabled"
+  },
+  "rejectedIP": {
+    "status": 400,
+    "code": 40306,
+    "property": "",
+    "message": "IP address rejected",
+    "moreinfo": "IP address is not allow to access the page"
+  },
+  "requiredCertificate": {
+    "status": 400,
+    "code": 40307,
+    "property": "",
+    "message": "Client certificate required.",
+    "moreinfo": "client certificate is not available or expired "
+  },
+  "accessDenied": {
+    "status": 400,
+    "code": 40308,
+    "property": "",
+    "message": "Site access denied..",
+    "moreinfo": "You are not authorized to access this page"
+  },
+  "userError": {
+    "status": 400,
+    "code": 40309,
+    "property": "",
+    "message": "Too many users.",
+    "moreinfo": "number of users connected to the server exceeds the connection limit"
+  },
+  "invalidConfiguration": {
+    "status": 400,
+    "code": 40310,
+    "property": "",
+    "message": "Invalid configuration",
+    "moreinfo": "You are not authorized to access this page"
+  },
+  "changePasswordError": {
+    "status": 400,
+    "code": 40311,
+    "property": "",
+    "message": "Password change",
+    "moreinfo": "The password cannot be changed at this time"
+  },
+  "deniedMapperAccess": {
+    "status": 400,
+    "code": 40312,
+    "property": "",
+    "message": "Mapper denied access",
+    "moreinfo": "The page requires a valid client certificate.The page you are trying to view requires the use of a valid client certificate."
+  },
+  "revokedCertificate": {
+    "status": 400,
+    "code": 40313,
+    "property": "",
+    "message": "client certificate revoked",
+    "moreinfo": "The password cannot be changed at this time"
+  },
+
+  "internalServerError": {
+    "status": 500,
+    "code": 50001,
+    "property": "",
+    "message": "Something went wrong. Please try after some time",
+    "moreinfo": "Something went wrong. Please try after some time"
+  }
+
+
+}
