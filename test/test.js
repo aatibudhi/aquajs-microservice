@@ -1,9 +1,14 @@
 var assert = require('assert');
 var request = require('request');
 var util = require('util');
-var statusCodes = require('../server/config/env/error-constants.json');
 var async = require('async');
 var baseurl = 'http://localhost:8080';
+
+var statusCodes = require('../server/config/env/error-constants.json');
+var coreTests = require('./core-codes-test-driver');
+
+var extendedCodes = require('../server/config/env/extended-error-constants.json');
+var extendedTests = require('./extended-codes-test-driver');
 
 // TODO: replace app with actual microsservice app
 var app = require('./app');
@@ -13,108 +18,71 @@ before(function (done) {
   var server = app.listen('8080', function () {
     console.log('server listening on port %s\n', server.address().port);
     done();
+
   });
 });
 
 
-function verify(res, expected, message, callback) {
-  console.log('verifying HTTP ' + expected);
-
+function verify(res, constants, message, callback) {
   if (!callback) {
     callback = message;
-    message = util.format('expected %s, but actual is %s', expected, res.statusCode);
+    message = util.format('expected %s, but actual is %s', constants.status, res.statusCode);
   }
 
-  assert.equal(res.statusCode, expected, message);
+  console.log('verifying HTTP %s%s',
+    constants.status,
+    constants.code ? ', custom code: ' + constants.code : ''
+  );
+
+  assert.equal(res.statusCode, constants.status, message);
   callback();
 }
 
 
-var tests = [
-  {
-    testName: '200 test',
-    statusName: 'OK'
-  },
-  {
-    testName: '201 test',
-    statusName: 'SUCCESS'
-  },
-  {
-    testName: '202 test',
-    statusName: 'ACCEPTED'
-  },
-  {
-    testName: '204 test',
-    statusName: 'noContent'
-  },
-  {
-    testName: '302 test',
-    statusName: 'FOUND'
-  },
-  {
-    testName: '304 test',
-    statusName: 'notModified'
-  },
-  {
-    testName: '400 test',
-    statusName: 'badRequest'
-  },
-  {
-    testName: '401 test',
-    statusName: 'UNAUTHORIZED'
-  },
-  {
-    testName: '403 test',
-    statusName: 'FORBIDDEN'
-  },
-  {
-    testName: '404 test',
-    statusName: 'invalidRequest'
-  },
-  {
-    testName: '406 test',
-    statusName: 'invalidRequest'
-  },
-  {
-    testName: '410 test',
-    statusName: 'resourceGone'
-  },
-  {
-    testName: '429 test',
-    statusName: 'manyRequests'
-  },
-  {
-    testName: '500 test',
-    statusName: 'serverError'
-  },
-  {
-    testName: '502 test',
-    statusName: 'badGateway'
-  },
-  {
-    testName: '503 test',
-    statusName: 'serviceUnavailable'
-  },
-  {
-    testName: '504 test',
-    statusName: 'gatewayTimeout'
-  }
 
-];
 
 
 it('should verify all status codes', function (done) {
-  var count = tests.length;
+  var count = coreTests.length;
 
   async.timesSeries(count, function(i, next) {
 
-    var statusCode = statusCodes[tests[i].statusName].code;
+    var code = statusCodes[coreTests[i].statusName];
+    var constants = {
+      status: code.status
+    };
 
-    var url = baseurl + '/' + statusCode;
+    var url = baseurl + '/' + constants.status;
 
     request(url, function (err, res, body) {
       if (err) return next(err);
-      verify(res, statusCode, next);
+      verify(res, constants, next);
+    });
+
+  }, function (err) {
+    console.log();
+    done(err);
+  });
+
+
+});
+
+it('should verify extended codes', function (done) {
+  var count = extendedTests.length;
+
+  async.timesSeries(count, function(i, next) {
+
+    var code = extendedCodes[extendedTests[i].statusName];
+    var constants = {
+      status: code.status,
+      code: code.code
+    };
+
+    var url = baseurl + '/' + constants.status;
+
+    request(url, function (err, res, body) {
+      if (err) return next(err);
+      verify(res, constants, next);
     });
 
   }, function (err) {
