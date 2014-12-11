@@ -47,7 +47,8 @@ describe('send email tests', function () {
     var mailContext = {
       from: 'Uma More <me@sandboxc83f6a95ec1f4b0d97d66e391dbe6d9c.mailgun.org>',
       to: 'u.r.surve@gmail.com',
-      subject: 'Hello'
+      subject: 'Hello',
+      format: 'html'
     };
 
     email.send('welcome', templateContext, mailContext, function (err, success) {
