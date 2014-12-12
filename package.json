@@ -6,7 +6,7 @@
     "poststart": "grunt coverage",
     "test": "grunt test",
     "httptest": "mocha -R spec test/test.js",
-    "emailtest": "mocha -R spec server/test/emailtest.js",
+    "emailtest": "mocha -R spec test/emailtest.js",
     "clean": "rm -f server/controllers/* server/impls/* server/routes/* server/models/* && rm -rf server/tests"
   },
   "repository": {
