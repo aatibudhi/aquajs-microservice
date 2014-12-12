@@ -4,7 +4,7 @@ var sinon = require('sinon'),
     dirPaths = require( process.cwd()+'/server/config/dirPaths'),
     {{modelName }} = require(dirPaths.modelsDir+'{{modelName }}');
     
-var Controller = require('../../controllers/{{ controllerName }}.js');
+var Controller = require(dirPaths.controllersDir+'{{ controllerName }}.js');
 var Model = {{modelName }};
 
 {%- for operation in operations -%}
@@ -15,7 +15,7 @@ var Model = {{modelName }};
 
             it('GET /users should return 200', function() {
                 var spy = sinon.spy();
-                Controller.get(null, {
+                Controller.{{ operation.nickname }}(null, {
                     send: spy
                 });
                 expect(spy).called;
@@ -29,7 +29,7 @@ var Model = {{modelName }};
 
             it('POST /users should return 200', function() {
                 var spy = sinon.spy();
-                Controller.post(null, {
+                Controller.{{ operation.nickname }}(null, {
                     send: spy
                 });
                 expect(spy).called;
@@ -43,7 +43,7 @@ var Model = {{modelName }};
 
             it('PUT /users should return 200', function() {
                 var spy = sinon.spy();
-                Controller.put(null, {
+                Controller.{{ operation.nickname }}(null, {
                     send: spy
                 });
                 expect(spy).called;
@@ -57,7 +57,7 @@ var Model = {{modelName }};
 
             it('DELETE /users should return 200', function() {
                 var spy = sinon.spy();
-                Controller.delete(null, {
+                Controller.{{ operation.nickname }}(null, {
                     send: spy
                 });
                 expect(spy).called;

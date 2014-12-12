@@ -17,6 +17,8 @@ var {{ modelName }} = persist.define("{{ modelName }}", {
             type.BLOB
         {%- elseif  attribute.type =="boolean"  -%}
             type.BOOLEAN
+        {%- elseif  attribute.type =="json"  -%}
+        type.JSON
         {%- endif -%}
     }
     {%- if loop.length >1 and !loop.last -%}
