@@ -17,7 +17,7 @@ GLOBAL.dirPaths = require( process.cwd()+'/server/config/dirPaths');
 
 var path = require('path'),
     express = require('express'),
-    aqua = require('aquajs'),
+   // aqua = require('aquajs'),
     http = require('http'),
     bodyParser = require('body-parser'),
     url = require("url"),
@@ -29,9 +29,9 @@ var path = require('path'),
     global.app = require(dirPaths.configDir + 'system/bootstrap')(config);
 
 //Load NPM modules to memory using dependable's
-     var aqua = aqua.app('aquajs'),
+     //var aqua = aqua.app('aquajs'),
 //initialize the logger
-     logger = require('aquajs-logger').getLogger();
+     var logger = require('aquajs-logger').getLogger();
 
 app.use(function (err, req, res, next) {
     console.log(err);
