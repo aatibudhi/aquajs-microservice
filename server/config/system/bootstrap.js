@@ -46,9 +46,9 @@ function initSwagger(app) {
   var setSwaggerContext = true;
   var pathList = [];
 
-  var list = fs.readdirSync(dirPaths.serverDir + 'schema');
+  var list = fs.readdirSync($dirPaths.serverDir + 'schema');
   list.forEach(function(file) {
-    pathList.push(dirPaths.serverDir + 'schema/' + file);
+    pathList.push($dirPaths.serverDir + 'schema/' + file);
   });
 
   app.get(/^\/apidoc(\/.*)?$/, function(req, res, next) {
@@ -84,7 +84,7 @@ function initORM(enableWaterline, enablePersist, dbConfList, app) {
   async.each(dbConfList, function(eachConfig, callback) {
     if (enableWaterline) {
       var orm = new Waterline();
-      var models_path = dirPaths.serverDir + 'models';
+      var models_path = $dirPaths.serverDir + 'models';
 
       fs.readdirSync(models_path).forEach(function(file) {
         var newPath = models_path + '/' + file
