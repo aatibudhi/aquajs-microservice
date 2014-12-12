@@ -1,5 +1,5 @@
 // bootstrap is responsible for setting up the entire environment,
-// including several globals
+// including several globals ($dirPaths, $config, $logger, and $app)
 
 GLOBAL.$dirPaths = require(process.cwd() + '/server/config/dirPaths');
 
@@ -13,12 +13,12 @@ var express = require('express'),
 
 
 module.exports = function(config) {
-  var app = express()
-
   GLOBAL.$config = config;
 
-  require('../express')(app)
+  var app = express()
   GLOBAL.$app = app;
+
+  require('../express')(app)
 
   initLogger(config.app.logconfpath);
   GLOBAL.$logger = AquaJsLogger.getLogger();
