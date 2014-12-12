@@ -1,4 +1,5 @@
-var bootstrap = require('./server/config/system/bootstrap'),
+var aquajs = require('aquajs'),
+    bootstrap = aquajs.bootstrap,
     config = require('./server/config/config');
 
 
