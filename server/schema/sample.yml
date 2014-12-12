@@ -10,26 +10,14 @@ apis:
     nickname: getApp
     consumes:
       - text/json
-- path: /application/{appid}
-  operations:
-  - httpMethod: GET
-    summary: Login with username and password
-    notes: Returns a user based on username
+  - httpMethod: POST
+    summary: get details
+    notes: post details
     responseClass: Application
-    nickname: getApp
-    consumes:
-      - text/json
-- path: /application/{appid}
-  operations:
-  - httpMethod: GET
-    summary: Login with username and password
-    notes: Returns a user based on username
-    responseClass: Application
-    nickname: getApp
+    nickname: postApp
     consumes:
       - text/json
 
-    
 models:
 - Application:
     id: Application
