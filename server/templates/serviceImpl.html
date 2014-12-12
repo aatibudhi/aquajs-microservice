@@ -1,3 +1,4 @@
+var dirPaths = require( process.cwd()+'/server/config/dirPaths');
 var {{ serviceImplName }} = {
 
 {%- for apiMethod in apiMethods -%}
@@ -5,11 +6,11 @@ var {{ serviceImplName }} = {
 
 {{ operation.nickname }}: function (req, res) {
 try {
-    {%- for model in modelNames -%}
-        {{model}};
+    {%- for eachModel in modelList -%}
+          var {{eachModel}} = require(dirPaths.modelsDir+'{{eachModel}}');
     {%- endfor -%}
 //code to call the pre and post methods of models
-return "successfully returned data from data access object layer ";
+return "success from sample API";
 } catch(e) {
 var html = '{{ operation.httpMethod }} : {{ operation.summary}} <br/><br/>' ;
 html += 'exports.<b>.{{ operation.nickname }}</b>.(req, res) {...}<br/><br/>';

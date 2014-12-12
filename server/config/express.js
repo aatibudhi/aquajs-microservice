@@ -7,6 +7,7 @@
 
 'use strict'
 var express = require('express'),
+    expressValidator = require('express-validator'),
     session = require('express-session'),
     flash = require('connect-flash'),
     helpers = require('view-helpers'),
@@ -63,9 +64,13 @@ module.exports = function (app, db) {
 
     // Request body parsing middleware should be above methodOverride
 
-    app.use(bodyParser.urlencoded());
-
     app.use(bodyParser.json());
+
+    // parse application/x-www-form-urlencoded
+    app.use(bodyParser.urlencoded({ extended: false }))
+
+    //For express form validator
+    app.use(expressValidator());
 
     app.use(require('method-override')())
 
