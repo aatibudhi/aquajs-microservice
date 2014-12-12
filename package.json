@@ -28,6 +28,7 @@
     "cookie-parser": "latest",
     "express": "latest",
     "express-session": "latest",
+	"express-validator": "latest",
     "lodash": "latest",
     "method-override": "latest",
     "morgan": "latest",
