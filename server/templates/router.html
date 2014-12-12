@@ -1,3 +1,5 @@
+var path = require('path');
+
 var {{ routerName }} = function(app){
 var {{ controllerName }} = require( path.join(dirPaths.controllersDir,'{{ controllerName }}'));
 {%- for apiMethod in apiMethods -%}

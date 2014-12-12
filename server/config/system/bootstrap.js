@@ -1,8 +1,8 @@
 var express = require('express'),
     fs = require('fs'),
+    path = require('path'),
     AquaJsLogger = require('aquajs-logger'),
     swagger = require("swagger-express"),
-    chai = require("chai"),
     async = require("async"),
     Waterline = require('waterline');
 
@@ -41,16 +41,16 @@ function initLogger(logpath) {
 }
 
 function initSwagger(app) {
-
   // Serve up swagger ui at /swagger via static route
   var docs_handler = express.static(path.join(__dirname, '..', '..', '..', 'node_modules', 'aquajs-swagger-ui', 'dist'));
   var setSwaggerContext = true;
   var pathList = [];
 
-  var list = fs.readdirSync(dirPaths.serverDir + 'schema')
+  var list = fs.readdirSync(dirPaths.serverDir + 'schema');
   list.forEach(function(file) {
     pathList.push(dirPaths.serverDir + 'schema/' + file);
   });
+
   app.get(/^\/apidoc(\/.*)?$/, function(req, res, next) {
     if (setSwaggerContext) {
       var urlPath = req.protocol + "://" + req.get('host');
@@ -81,7 +81,6 @@ function initSwagger(app) {
   });
 }
 function initORM(enableWaterline, enablePersist, dbConfList, app) {
-
   async.each(dbConfList, function(eachConfig, callback) {
     if (enableWaterline) {
       var orm = new Waterline();
@@ -95,36 +94,35 @@ function initORM(enableWaterline, enablePersist, dbConfList, app) {
             orm.loadCollection(require(newPath));
           }
           catch (ex) {
-            console.log(ex);
+            callback(ex);
           }
         }
       });
 
       orm.initialize(eachConfig, function(err, models) {
+        if (err) return callback(err);
+
         try {
           app.models = models.collections;
           app.connections = models.connections;
         } catch (e) {
           console.error("error: ensure mongo is running before starting microservice");
-          process.exit(1);
+          callback(e);
         }
 
       });
     }
 
     if (enablePersist) {
-      // code for persist model initialization
+      // TODO: code for persist model initialization
     }
 
-    callback(null, 'finished the model initialization');
+    callback();
 
   }, function(err) {
     if (err) {
-      console.log('A file failed to process');
-    } else {
-      console.log('All files have been processed successfully');
+      AquaJsLogger.getLogger().error(err);
     }
   });
 }
-
 

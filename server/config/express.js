@@ -5,6 +5,7 @@ var express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     fs = require('fs'),
+    path = require('path'),
     appPath = process.cwd();
 
 module.exports = function(app) {
