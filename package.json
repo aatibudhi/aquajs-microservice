@@ -25,14 +25,12 @@
     "body-parser": "latest",
     "chai": "latest",
     "compression": "latest",
-    "connect-flash": "latest",
     "cookie-parser": "latest",
     "express": "latest",
     "lodash": "latest",
     "method-override": "latest",
     "morgan": "latest",
     "swagger-express": "latest",
-    "view-helpers": "latest",
     "winston": "latest",
     "swig": "^1.4.2",
     "mailgun-js": "^0.6.7"
@@ -42,8 +40,7 @@
     "grunt-mocha-test": "^0.12.1",
     "istanbul": "^0.3.2",
     "mocha": "^2.0.1",
-    "sinon-chai": "^2.6.0",
-    "async": "^0.9.0",
-    "request": "^2.49.0"
+    "request": "^2.49.0",
+    "sinon-chai": "^2.6.0"
   }
 }

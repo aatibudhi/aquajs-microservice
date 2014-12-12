@@ -1,29 +1,11 @@
-/**
- * Aqua JS Framework build on top of the express
- * Minimal Express initialization routing and env configuration files initialization
- * Middle wire wirging using app.use like body parase compression cookie parser
- */
-
-'use strict'
 var express = require('express'),
-    helpers = require('view-helpers'),
     config = require('./config'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
     morgan = require('morgan'),
-    appPath = process.cwd(),
     bodyParser = require('body-parser'),
-    fs = require('fs');
-
-/**
- * Middle wire component initialization using app.use
- * @api public
- * @param app
- * @param db
- * @see
- * @return
- */
-
+    fs = require('fs'),
+    appPath = process.cwd();
 
 module.exports = function(app) {
 
@@ -66,13 +48,10 @@ module.exports = function(app) {
 
   app.use(require('method-override')())
 
-  // Dynamic helpers
-  app.use(helpers(config.app.name));
-
   // Routes should be last
   bootstrapRoutes(app);
 
-  //initializing the routes from the server/routes folder
+  // Initializing routes from the server/routes directory
   function bootstrapRoutes(app) {
     var routes_path = path.join(appPath, 'server', 'routes');
     if (fs.existsSync(routes_path)) {
@@ -95,4 +74,4 @@ module.exports = function(app) {
       walk(routes_path);
     }
   }
-}
+};
