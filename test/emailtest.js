@@ -51,11 +51,17 @@ describe('send email tests', function () {
       name: 'Uma'
     };
 
+    var attachments = [
+      path.join(__dirname, './email-sample1.log'),
+      path.join(__dirname, './email-sample2.log')
+    ];
+
     var mailContext = {
       from: 'Uma More <me@sandboxc83f6a95ec1f4b0d97d66e391dbe6d9c.mailgun.org>',
-      to: 'u.r.surve@gmail.com',
+      to: 'uma.more96@gmail.com',
       subject: 'Hello',
-      format: 'html'
+      format: 'html',
+      attachment: attachments
     };
 
     log.info('[emailtest] sending a test email');
