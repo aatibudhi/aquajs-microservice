@@ -1,6 +1,6 @@
 var aquajs = require('aquajs'),
     bootstrap = aquajs.bootstrap,
-    config = require('./server/config/config');
+    config = require('./config/config');
 
 
 // bootstrap is responsible for setting up the entire environment,

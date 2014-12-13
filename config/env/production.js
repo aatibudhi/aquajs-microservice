@@ -5,13 +5,14 @@
  * log config and scheduler config and other boolean flags for production env
  *
  */
-'use strict';
+
+var path = require('path');
 
 module.exports = {
     //db: 'mongodb://localhost/aquajs-cli',
     app: {
         name: 'aqua',
-        logconfpath: configDir + 'env/log_config.json'
+        logconfpath: path.join($dirPaths.configDir, 'env/log_config.json')
     }
 
 };

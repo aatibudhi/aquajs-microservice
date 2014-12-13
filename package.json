@@ -7,7 +7,7 @@
     "test": "grunt test",
     "httptest": "mocha -R spec test/test.js",
     "emailtest": "mocha -R spec test/emailtest.js",
-    "clean": "rm -f server/controllers/* server/impls/* server/routes/* server/models/* && rm -rf server/tests"
+    "clean": "rm -f controllers/* impls/* routes/* models/* && rm -rf tests"
   },
   "repository": {
     "type": "git",
