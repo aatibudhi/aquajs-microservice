@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "aquajs": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs/latest",
-    "aquajs-logger": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs-logger/latest",
     "aquajs-swagger-ui": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs-swagger-ui/latest",
     "async": "latest",
     "compression": "latest",
