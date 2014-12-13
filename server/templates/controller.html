@@ -34,7 +34,6 @@ var validateParams = function(req, methodType) {
     }
     var queryParams =  Object.keys(req.query);
     if(queryParams.length>0){
-        var queryParam = Object.keys(req.params);
         for(qindex in queryParam){
         req.checkQuery(queryParam[qindex], 'Invalid url param').isAlphanumeric();
         }
