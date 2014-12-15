@@ -6,7 +6,8 @@
  * We also provide the database initialization configuration for waterline and persist
  *
  */
-'use strict';
+var path = require('path');
+
 var wDBConf = {
     adapters: {
         'default': require('sails-mongo'),
@@ -25,8 +26,8 @@ var wDBConf = {
 module.exports = {
     app: {
         name: 'aqua',
-        logconfpath: dirPaths.configDir + 'env/log_config.json',
-        schedulerconfpath: dirPaths.configDir + 'env/scheduler-conf.json',
+        logconfpath: path.join($dirPaths.configDir, 'env/log_config.json'),
+        schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
         ormList:['waterline','persist'],
         dbConfList:[wDBConf]
     }

@@ -1,11 +1,11 @@
 var sinon = require('sinon'),
     chai = require('chai').use(require('sinon-chai')),
     expect = chai.expect,
-    dirPaths = require( process.cwd()+'/server/config/dirPaths'),
-    {{modelName }} = require(dirPaths.modelsDir+'{{modelName }}');
+    dirPaths = require( process.cwd() + '/server/config/dirPaths'),
+    {{ modelName }} = require(dirPaths.modelsDir + '{{ modelName }}');
     
 var Controller = require(dirPaths.controllersDir+'{{ controllerName }}.js');
-var Model = {{modelName }};
+var Model = {{ modelName }};
 
 {%- for operation in operations -%}
 

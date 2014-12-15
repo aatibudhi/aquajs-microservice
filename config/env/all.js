@@ -1,4 +1,3 @@
-
 /**
  * Created by verangasamy on 7/29/14.
  * boolean flag settings like enabling the batch processs or use template engine or not
@@ -6,13 +5,8 @@
  *
  */
 
-'use strict';
-
-var path = require('path');
-var rootPath = path.normalize(__dirname + '/../../..');
-
 module.exports = {
-    root: rootPath,
+    root: process.cwd(),
     port: process.env.PORT || 8090,
     templateEngine: 'swig',
     // The secret should be set to a non-guessable string that

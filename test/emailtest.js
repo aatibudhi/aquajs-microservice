@@ -1,10 +1,10 @@
 var assert = require('assert'),
-  email = require('../lib/email'),
+  email = require('../server/lib/email'),
   path = require('path'),
   templatePath = path.join(process.cwd(), 'server/templates/email'),
   fs = require('fs'),
   renderedPath = path.join(__dirname, 'rendered-templates'),
-  loggerConfig = require('../config/env/log_config.json'),
+  loggerConfig = require('../server/config/env/log_config.json'),
   logger = require('aquajs-logger'),
   log;
 

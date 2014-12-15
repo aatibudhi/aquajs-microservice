@@ -1,0 +1,105 @@
+resourcePath: /application
+description: All about API
+apis:
+- path: /application/{appid}/test/{first}
+  operations:
+  - httpMethod: GET
+    summary: Login with username and password
+    notes: Returns a user based on username
+    responseClass: Application
+    nickname: getApp
+    consumes:
+      - text/json
+  - httpMethod: POST
+    summary: get details
+    notes: post details
+    responseClass: Application
+    nickname: postApp
+    consumes:
+      - text/json
+    parameters:
+    - name: username
+      dataType: string
+      paramType: query
+      required: true
+      description: Your username
+
+    - name: password
+      dataType: string
+      paramType: query
+      required: true
+      description: Your password
+
+models:
+- Application:
+    id: Application
+    adapter: mongo
+    connection : mongo
+    properties:
+      appName:
+        type: String
+      appId:
+        type: String
+      appSecret:
+        type: String
+      logAttributes:
+        type: json
+      ownerAttributes:
+        type: json
+      version:
+        type: String
+	
+- Application2:
+    id: Application2
+    adapter: mongo
+    connection : mongo
+    properties:
+      appName:
+        type: String
+      appId:
+        type: String
+      appSecret:
+        type: String
+      logAttributes:
+        type: json
+      ownerAttributes:
+        type: json
+      version:
+        type: String
+
+- Application3:
+    id: Application3
+    adapter: mongo
+    connection : mongo
+    properties:
+      appName:
+        type: String
+      appId:
+        type: String
+      appSecret:
+        type: String
+      logAttributes:
+        type: json
+      ownerAttributes:
+        type: json
+      version:
+        type: String
+	
+- Application4:
+    id: Application4
+    adapter: mongo
+    connection : mongo
+    properties:
+      appName:
+        type: id
+      appId:
+        type: String
+      appSecret:
+        type: String
+      logAttributes:
+        type: json
+      ownerAttributes:
+        type: json
+      version:
+        type: String
+ 

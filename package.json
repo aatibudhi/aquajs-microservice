@@ -6,7 +6,8 @@
     "poststart": "grunt coverage",
     "test": "grunt test",
     "httptest": "mocha -R spec test/test.js",
-    "emailtest": "mocha -R spec server/test/emailtest.js"
+    "emailtest": "mocha -R spec test/emailtest.js",
+    "clean": "rm -f controllers/* impls/* routes/* models/* && rm -rf tests"
   },
   "repository": {
     "type": "git",
@@ -14,37 +15,26 @@
   },
   "dependencies": {
     "aquajs": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs/latest",
-    "aquajs-logger": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs-logger/latest",
     "aquajs-swagger-ui": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs-swagger-ui/latest",
     "async": "latest",
-    "sails-mongo": "latest",
-    "waterline": "latest",
-    "hippie": "latest",
-    "persist": "latest",
-    "body-parser": "latest",
-    "chai": "latest",
     "compression": "latest",
-    "connect-flash": "latest",
-    "cookie-parser": "latest",
     "express": "latest",
-    "express-session": "latest",
-	"express-validator": "latest",
     "lodash": "latest",
-    "method-override": "latest",
-    "morgan": "latest",
-    "swagger-express": "latest",
-    "view-helpers": "latest",
-    "winston": "latest",
+    "mailgun-js": "^0.6.7",
+    "persist": "latest",
+    "sails-mongo": "latest",
     "swig": "^1.4.2",
-    "mailgun-js": "^0.6.7"
+    "waterline": "latest",
+    "winston": "latest"
   },
   "devDependencies": {
+    "chai": "latest",
     "grunt-mocha-istanbul": "^2.1.0",
     "grunt-mocha-test": "^0.12.1",
+    "hippie": "latest",
     "istanbul": "^0.3.2",
     "mocha": "^2.0.1",
-    "sinon-chai": "^2.6.0",
-    "async": "^0.9.0",
-    "request": "^2.49.0"
+    "request": "^2.49.0",
+    "sinon-chai": "^2.6.0"
   }
 }

@@ -7,7 +7,7 @@ var {{ serviceImplName }} = {
 {{ operation.nickname }}: function (req, res) {
 try {
     {%- for eachModel in modelList -%}
-          var {{eachModel}} = require(dirPaths.modelsDir+'{{eachModel}}');
+          var {{eachModel}} = require($dirPaths.modelsDir+'{{eachModel}}');
     {%- endfor -%}
 //code to call the pre and post methods of models
 return "success from sample API";
