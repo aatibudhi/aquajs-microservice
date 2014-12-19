@@ -1,105 +1,156 @@
-resourcePath: /application
+resourcePath: /orderApplication
 description: All about API
+version: "1.0.0"
 apis:
-- path: /application/{appid}/test/{first}
+- path: /orders
   operations:
   - httpMethod: GET
-    summary: Login with username and password
-    notes: Returns a user based on username
-    responseClass: Application
-    nickname: getApp
+    summary: to get all orders
+    notes: Returns all orders
+    responseClass: Orders
+    requestClass: Orders
+    nickname: getOrders
     consumes:
       - text/json
   - httpMethod: POST
-    summary: get details
-    notes: post details
-    responseClass: Application
-    nickname: postApp
+    summary: Add new order
+    notes:  adds new pizza order
+    responseClass: OrderAdd
+    requestClass: Orders
+    nickname: postOrder
+    consumes:
+      - application/json
+    parameters:
+      - name: body
+        dataType: order
+        paramType: body
+        required: true
+        description: Order to be added
+- path: /orders/{orderId}
+  operations:
+  - httpMethod: GET
+    summary: get particular order by id
+    notes: Returns an order with specified id
+    responseClass: Orders
+    requestClass: Orders
+    nickname: getOrderById
     consumes:
       - text/json
     parameters:
-    - name: username
-      dataType: string
-      paramType: query
-      required: true
-      description: Your username
+      - name: orderId
+        dataType: string
+        paramType: path
+        required: true
+        description: Order Id to be fetched
+  - httpMethod: DELETE
+    summary: delete particular order by id
+    notes: deletes an order with specified id
+    responseClass: Status
+    requestClass: Orders
+    nickname: deleteOrderById
+    consumes:
+      - text/json
+    parameters:
+      - name: orderId
+        dataType: string
+        paramType: path
+        required: true
+        description: Order Id to be deleted
+  - httpMethod: PUT
+    summary: update particular order by id
+    notes: updates an order with specified id
+    responseClass: Orders
+    requestClass: Orders
+    nickname: updateOrderById
+    consumes:
+      - application/json
+    parameters:
+      - name: orderId
+        dataType: string
+        paramType: path
+        required: true
+        description: Order Id to be updated
 
-    - name: password
-      dataType: string
-      paramType: query
-      required: true
-      description: Your password
+      - name: body
+        dataType: order
+        paramType: body
+        required: true
+        description: Order to be updated
+- path: /pizza/{pizzaId}
+  operations:
+  - httpMethod: GET
+    summary: get particular pizza type by id
+    notes: Returns a pizza type with specified id
+    responseClass: Pizza
+    requestClass: Pizza
+    nickname: getPizzaById
+    consumes:
+      - text/json
+    parameters:
+      - name: pizzaId
+        dataType: string
+        paramType: path
+        required: true
+        description: pizza Id to be fetched
+- path: /pizza
+  operations:
+  - httpMethod: POST
+    summary: Add new type of pizza
+    notes: adds a new pizza
+    responseClass: Pizza
+    requestClass: Pizza
+    nickname: postPizza
+    consumes:
+      - application/json
+    parameters:
+      - name: body
+        dataType: pizza
+        paramType: body
+        required: true
+        description: Pizza to be added
 
 models:
-- Application:
-    id: Application
+- Orders:
+    id: Orders
     adapter: mongo
     connection : mongo
     properties:
-      appName:
+      orderId:
         type: String
-      appId:
+      orderName:
         type: String
-      appSecret:
+      orderContents:
         type: String
-      logAttributes:
-        type: json
-      ownerAttributes:
-        type: json
-      version:
+      quantity:
+        type: integer
+      orderStatus:
         type: String
-	
-- Application2:
-    id: Application2
+- OrderAdd:
+    id: OrderAdd
+    type: responseClass
+    properties:
+      orderId:
+        type: String
+      orderName:
+        type: String
+- Pizza:
+    id: Pizza
     adapter: mongo
     connection : mongo
     properties:
-      appName:
-        type: String
-      appId:
-        type: String
-      appSecret:
-        type: String
-      logAttributes:
-        type: json
-      ownerAttributes:
-        type: json
-      version:
+       pizzaId:
+         type: String
+       pizzaName:
+         type: String
+       pizzaContents:
+         type: String
+       Size:
+         type: integer
+- Status:
+    id: Status
+    type: responseClass
+    properties:
+      statusInfo:
         type: String
 
-- Application3:
-    id: Application3
-    adapter: mongo
-    connection : mongo
-    properties:
-      appName:
-        type: String
-      appId:
-        type: String
-      appSecret:
-        type: String
-      logAttributes:
-        type: json
-      ownerAttributes:
-        type: json
-      version:
-        type: String
-	
-- Application4:
-    id: Application4
-    adapter: mongo
-    connection : mongo
-    properties:
-      appName:
-        type: id
-      appId:
-        type: String
-      appSecret:
-        type: String
-      logAttributes:
-        type: json
-      ownerAttributes:
-        type: json
-      version:
-        type: String
- 
+

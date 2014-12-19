@@ -19,6 +19,7 @@
     "async": "latest",
     "compression": "latest",
     "express": "latest",
+    "express-validator": "^2.7.0",
     "lodash": "latest",
     "mailgun-js": "^0.6.7",
     "persist": "latest",
