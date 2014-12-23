@@ -3,6 +3,14 @@
     "console": {
       "level": "info",
       "colorize": true
+    },"precog": {
+      "level": "info",
+      "colorize":true,
+      "host":"nathanjdev.sv2.corp.equinix.com",
+      "port":61613,
+      "transType":"queue",
+      "appDest":"DEV.jms/qBT",
+      "btDest":"jms/qBTappLogs"
     },
     "file": {
       "level": "info",
