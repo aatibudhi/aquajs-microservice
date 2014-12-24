@@ -127,7 +127,6 @@ models:
         type: String
 - OrderAdd:
     id: OrderAdd
-    type: responseClass
     properties:
       orderId:
         type: String
@@ -148,9 +147,6 @@ models:
          type: integer
 - Status:
     id: Status
-    type: responseClass
     properties:
       statusInfo:
         type: String
-
-
