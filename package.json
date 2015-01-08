@@ -19,14 +19,16 @@
     "async": "latest",
     "compression": "latest",
     "express": "latest",
-    "express-validator": "^2.7.0",
     "lodash": "latest",
     "mailgun-js": "^0.6.7",
     "persist": "latest",
     "sails-mongo": "latest",
     "swig": "^1.4.2",
     "waterline": "latest",
-    "winston": "latest"
+    "winston": "latest",
+    "lodash": "latest",
+    "sails-mongo": "latest",
+    "persist": "latest"
   },
   "devDependencies": {
     "chai": "latest",
