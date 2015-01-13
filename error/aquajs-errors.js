@@ -25,6 +25,7 @@ AquaJsErrors.prototype.addError = function (configName, property, message, more_
             errorConfig = extendedErrorConstant[configName];
         }
         if(undefined == errorConfig) {
+			errorConfig = {} ;
             errorConfig.status =400;
             errorConfig.property = "";
             errorConfig.message = "error key not found"
