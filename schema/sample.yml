@@ -1,11 +1,11 @@
-resourcePath: /orderApplication
+resourcePath: /Sample-Example-Order_App
 description: All about API
 version: "1.0.0"
 apis:
 - path: /orders
   operations:
   - httpMethod: GET
-    summary: to get all orders
+    summary: Get all the orders
     notes: Returns all orders
     responseClass: Orders
     requestClass: Orders
@@ -13,7 +13,7 @@ apis:
     consumes:
       - text/json
   - httpMethod: POST
-    summary: Add new order
+    summary: Add a new order
     notes:  adds new pizza order
     responseClass: OrderAdd
     requestClass: Orders
@@ -29,7 +29,7 @@ apis:
 - path: /orders/{orderId}
   operations:
   - httpMethod: GET
-    summary: get particular order by id
+    summary: Get a particular order by id
     notes: Returns an order with specified id
     responseClass: Orders
     requestClass: Orders
@@ -43,7 +43,7 @@ apis:
         required: true
         description: Order Id to be fetched
   - httpMethod: DELETE
-    summary: delete particular order by id
+    summary: Delete the particular order by id
     notes: deletes an order with specified id
     responseClass: Status
     requestClass: Orders
@@ -57,7 +57,7 @@ apis:
         required: true
         description: Order Id to be deleted
   - httpMethod: PUT
-    summary: update particular order by id
+    summary: Update the particular order by id
     notes: updates an order with specified id
     responseClass: Orders
     requestClass: Orders
@@ -79,7 +79,7 @@ apis:
 - path: /pizza/{pizzaId}
   operations:
   - httpMethod: GET
-    summary: get particular pizza type by id
+    summary: Get the particular pizza type by id
     notes: Returns a pizza type with specified id
     responseClass: Pizza
     requestClass: Pizza
@@ -95,7 +95,7 @@ apis:
 - path: /pizza
   operations:
   - httpMethod: POST
-    summary: Add new type of pizza
+    summary: Add a new type of pizza
     notes: adds a new pizza
     responseClass: Pizza
     requestClass: Pizza
@@ -115,15 +115,15 @@ models:
     adapter: mongo
     connection : mongo
     properties:
-      orderId:
+      id:
+        type: int
+      order_name:
         type: String
-      orderName:
-        type: String
-      orderContents:
+      order_contents:
         type: String
       quantity:
-        type: integer
-      orderStatus:
+        type: int
+      order_status:
         type: String
 - OrderAdd:
     id: OrderAdd
@@ -138,13 +138,13 @@ models:
     connection : mongo
     properties:
        pizzaId:
-         type: String
+         type: int
        pizzaName:
          type: String
        pizzaContents:
          type: String
        Size:
-         type: integer
+         type: int
 - Status:
     id: Status
     properties:
