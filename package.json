@@ -1,6 +1,6 @@
 {
   "name": "aquajs-microservice",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "scripts": {
     "start": "node server.js",
     "poststart": "grunt coverage",
