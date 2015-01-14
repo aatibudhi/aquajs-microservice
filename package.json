@@ -16,6 +16,7 @@
   "dependencies": {
     "aquajs": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs/latest",
     "aquajs-swagger-ui": "http://sv2lxecxapid01.corp.equinix.com:8080/package/aquajs-swagger-ui/latest",
+    "express-validator": "^2.7.0",
     "async": "latest",
     "compression": "latest",
     "express": "latest",
