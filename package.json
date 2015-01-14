@@ -1,6 +1,6 @@
 {
   "name": "aquajs-microservice",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "scripts": {
     "start": "node server.js",
     "poststart": "grunt coverage",
@@ -25,10 +25,7 @@
     "sails-mongo": "latest",
     "swig": "^1.4.2",
     "waterline": "latest",
-    "winston": "latest",
-    "lodash": "latest",
-    "sails-mongo": "latest",
-    "persist": "latest"
+    "winston": "latest"
   },
   "devDependencies": {
     "chai": "latest",
