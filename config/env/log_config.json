@@ -9,8 +9,10 @@
       "host":"nathanjdev.sv2.corp.equinix.com",
       "port":61613,
       "transType":"queue",
-      "appDest":"DEV.jms/qBT",
-      "btDest":"jms/qBTappLogs"
+      "appDest":"DLQ.p.jms/qBT",
+      "btDest":"DLQ.p.jms/qBT",
+      "logMongo":true,
+      "mongoUrl":"mongodb://localhost:27017/aquajs"
     },
     "file": {
       "level": "info",
