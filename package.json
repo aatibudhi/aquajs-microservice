@@ -22,7 +22,8 @@
     "express-validator": "^2.7.0",
     "lodash": "latest",
     "persist": "*",
-    "waterline": "*"
+    "waterline": "*",
+    "sails-mongo":"latest"
   },
   "devDependencies": {
     "chai": "latest",
