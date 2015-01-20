@@ -9,16 +9,6 @@ module.exports = {
     root: process.cwd(),
     port: process.env.PORT || 8090,
     templateEngine: 'swig',
-    // The secret should be set to a non-guessable string that
-    // is used to compute a session hash
-    sessionSecret: '@mam#@!',
-    // The name of the MongoDB collection to store sessions in
-    sessionCollection: 'usersession',
-    //API Server flag
-    apiServer: 'true',
-    //Batch process server
-    batchProcessServer: 'false',
-    enableWaterline:'true',
-    enablePersist:'false'
-
+    enableWaterline:true,
+    enablePersist:false
 };

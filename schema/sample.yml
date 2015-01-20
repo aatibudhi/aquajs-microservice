@@ -26,7 +26,7 @@ apis:
         paramType: body
         required: true
         description: Order to be added
-- path: /orders/{orderId}
+- path: /orders/{id}
   operations:
   - httpMethod: GET
     summary: Get a particular order by id
@@ -37,7 +37,7 @@ apis:
     consumes:
       - text/json
     parameters:
-      - name: orderId
+      - name: id
         dataType: string
         paramType: path
         required: true
@@ -51,7 +51,7 @@ apis:
     consumes:
       - text/json
     parameters:
-      - name: orderId
+      - name: id
         dataType: string
         paramType: path
         required: true
@@ -65,7 +65,7 @@ apis:
     consumes:
       - application/json
     parameters:
-      - name: orderId
+      - name: id
         dataType: string
         paramType: path
         required: true
@@ -76,7 +76,7 @@ apis:
         paramType: body
         required: true
         description: Order to be updated
-- path: /pizza/{pizzaId}
+- path: /pizza/{id}
   operations:
   - httpMethod: GET
     summary: Get the particular pizza type by id
@@ -87,7 +87,7 @@ apis:
     consumes:
       - text/json
     parameters:
-      - name: pizzaId
+      - name: id
         dataType: string
         paramType: path
         required: true
@@ -128,8 +128,8 @@ models:
 - OrderAdd:
     id: OrderAdd
     properties:
-      orderId:
-        type: String
+      id:
+        type: int
       orderName:
         type: String
 - Pizza:
@@ -137,13 +137,13 @@ models:
     adapter: mongo
     connection : mongo
     properties:
-       pizzaId:
+       id:
          type: int
-       pizzaName:
+       pizza_name:
          type: String
-       pizzaContents:
+       pizza_contents:
          type: String
-       Size:
+       pizza_size:
          type: int
 - Status:
     id: Status

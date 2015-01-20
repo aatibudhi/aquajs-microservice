@@ -9,7 +9,7 @@
 var path = require('path');
 
 var wDBConf = {
-    adapters: {
+  adapters: {
         'default': require('sails-mongo'),
         mongo: require('sails-mongo')
     },
@@ -23,12 +23,29 @@ var wDBConf = {
         }
     }
 };
+
+var persistConf = {
+    "driver": "oracle",
+  "name": "testConn",
+  "hostname": "eceedevdb01.sv2.corp.equinix.com",
+  "user": "ecee_int",
+  "password": "welcome1",
+  "port": "1521",
+  "database": "ECEEDEV1",
+  "pooling": {
+      "name": "ecxPool",
+      "max": 2,
+      "min": 1,
+      "idleTimeoutMillis": 30000
+  }
+};
+
 module.exports = {
     app: {
         name: 'aqua',
         logconfpath: path.join($dirPaths.configDir, 'env/log_config.json'),
         schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
         ormList:['waterline','persist'],
-        dbConfList:[wDBConf]
+        dbConfList:[wDBConf,persistConf]
     }
 };

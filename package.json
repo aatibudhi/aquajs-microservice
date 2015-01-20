@@ -21,6 +21,7 @@
     "express": "*",
     "express-validator": "^2.7.0",
     "lodash": "latest",
+    "rekuire": "latest",
     "persist": "*",
     "waterline": "*",
     "sails-mongo":"latest"
