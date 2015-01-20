@@ -5,8 +5,8 @@ apis:
 - path: /orders
   operations:
   - httpMethod: GET
-    summary: Get all the orders
-    notes: Returns all orders
+    summary: Get all the orders for a pizza order example
+    notes: Returns all orders of a pizza order example
     responseClass: Orders
     requestClass: Orders
     nickname: getOrders
@@ -22,15 +22,15 @@ apis:
       - application/json
     parameters:
       - name: body
-        dataType: order
+        dataType: Orders
         paramType: body
         required: true
         description: Order to be added
 - path: /orders/{id}
   operations:
   - httpMethod: GET
-    summary: Get a particular order by id
-    notes: Returns an order with specified id
+    summary: Get a particular pizza order by id
+    notes: Returns an pizza order with specified id
     responseClass: Orders
     requestClass: Orders
     nickname: getOrderById
@@ -38,13 +38,13 @@ apis:
       - text/json
     parameters:
       - name: id
-        dataType: string
+        dataType: integer
         paramType: path
         required: true
-        description: Order Id to be fetched
+        description: Pizza Order Id to be fetched
   - httpMethod: DELETE
-    summary: Delete the particular order by id
-    notes: deletes an order with specified id
+    summary: Delete the particular  pizza order by id
+    notes: Delete an pizza order with specified id
     responseClass: Status
     requestClass: Orders
     nickname: deleteOrderById
@@ -52,13 +52,13 @@ apis:
       - text/json
     parameters:
       - name: id
-        dataType: string
+        dataType: integer
         paramType: path
         required: true
-        description: Order Id to be deleted
+        description: Order Id for pizza to be deleted
   - httpMethod: PUT
-    summary: Update the particular order by id
-    notes: updates an order with specified id
+    summary: Update the particular pizza order by id
+    notes: updates an pizza order with specified id
     responseClass: Orders
     requestClass: Orders
     nickname: updateOrderById
@@ -66,16 +66,16 @@ apis:
       - application/json
     parameters:
       - name: id
-        dataType: string
+        dataType: integer
         paramType: path
         required: true
-        description: Order Id to be updated
+        description: Order Id for pizza  to be updated
 
       - name: body
-        dataType: order
+        dataType: Orders
         paramType: body
         required: true
-        description: Order to be updated
+        description: Order for pizza  to be updated
 - path: /pizza/{id}
   operations:
   - httpMethod: GET
@@ -88,15 +88,15 @@ apis:
       - text/json
     parameters:
       - name: id
-        dataType: string
+        dataType: integer
         paramType: path
         required: true
-        description: pizza Id to be fetched
+        description: pizza Oder Id to be fetched
 - path: /pizza
   operations:
   - httpMethod: POST
     summary: Add a new type of pizza
-    notes: adds a new pizza
+    notes: adds a new type of pizza
     responseClass: Pizza
     requestClass: Pizza
     nickname: postPizza
@@ -104,7 +104,7 @@ apis:
       - application/json
     parameters:
       - name: body
-        dataType: pizza
+        dataType: Pizza
         paramType: body
         required: true
         description: Pizza to be added
@@ -117,21 +117,22 @@ models:
     properties:
       id:
         type: int
+        primaryKey: true
       order_name:
-        type: String
+        type: string
       order_contents:
-        type: String
+        type: string
       quantity:
         type: int
       order_status:
-        type: String
+        type: string
 - OrderAdd:
     id: OrderAdd
     properties:
       id:
         type: int
       orderName:
-        type: String
+        type: string
 - Pizza:
     id: Pizza
     adapter: mongo
@@ -140,13 +141,13 @@ models:
        id:
          type: int
        pizza_name:
-         type: String
+         type: string
        pizza_contents:
-         type: String
+         type: string
        pizza_size:
          type: int
 - Status:
     id: Status
     properties:
       statusInfo:
-        type: String
+        type: string
