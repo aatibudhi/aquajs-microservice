@@ -1,6 +1,9 @@
 {
   "name": "aquajs-microservice",
-  "version": "0.0.47",
+  "version": "0.0.48",
+  "description": "Aqua.js generic microservice template",
+  "license": "ISC",
+  "keywords": [ "aqua microservice" ],
   "scripts": {
     "start": "node server.js",
     "poststart": "grunt coverage",
@@ -9,9 +12,13 @@
     "emailtest": "mocha -R spec test/emailtest.js",
     "clean": "rm -f controllers/* impls/* routes/* models/* && rm -rf tests"
   },
+  "homepage": "https://github.com/aquajs/aquajs-microservice",
   "repository": {
     "type": "git",
     "url": "git://github.com:aquajs/aquajs-microservice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aquajs/aquajs-microservice/issues"
   },
   "dependencies": {
     "aquajs": "*",
@@ -35,5 +42,8 @@
     "mocha": "^2.0.1",
     "request": "^2.49.0",
     "sinon-chai": "^2.6.0"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.corp.equinix.com/nexus/content/repositories/Equinix-AquaJS-Release/"
   }
 }
