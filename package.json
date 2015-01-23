@@ -25,6 +25,7 @@
   "dependencies": {
     "aquajs": "*",
     "aquajs-logger": "*",
+	"aquajs-swagger-ui": "*",
     "async": "*",
     "compression": "*",
     "express": "*",
