@@ -11,3 +11,4 @@ var server = app.listen($config.port, function() {
   $logger.info("[microservice] listing on port:" + server.address().port);
 });
 
+module.exports = server;
