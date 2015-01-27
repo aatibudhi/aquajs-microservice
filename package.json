@@ -25,7 +25,6 @@
   "dependencies": {
     "aquajs": "*",
     "aquajs-logger": "*",
-    "aquajs-swagger-ui": "*",
     "async": "*",
     "express": "*",
     "lodash": "^3.0.0",
