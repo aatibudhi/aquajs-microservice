@@ -27,24 +27,17 @@
     "aquajs-logger": "*",
     "aquajs-swagger-ui": "*",
     "async": "*",
-    "compression": "*",
     "express": "*",
-    "express-validator": "^2.7.0",
-    "lodash": "latest",
-    "persist": "*",
-    "rekuire": "^0.1.9",
-    "sails-mongo": "latest",
-    "waterline": "*"
+    "lodash": "^3.0.0",
+    "sails-mongo": "latest"
   },
   "devDependencies": {
-    "chai": "latest",
     "grunt-mocha-istanbul": "^2.1.0",
     "grunt-mocha-test": "^0.12.1",
-    "hippie": "latest",
     "istanbul": "^0.3.2",
     "mocha": "^2.0.1",
-    "request": "^2.49.0",
-    "sinon-chai": "^2.6.0"
+    "npm-check": "^3.2.7",
+    "request": "^2.49.0"
   },
   "publishConfig": {
     "registry": "http://nexus.corp.equinix.com/nexus/content/repositories/Equinix-AquaJS-Release/"
