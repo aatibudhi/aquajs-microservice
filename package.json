@@ -35,7 +35,6 @@
     "grunt-mocha-test": "^0.12.1",
     "istanbul": "^0.3.2",
     "mocha": "^2.0.1",
-    "npm-check": "^3.2.7",
     "request": "^2.49.0"
   },
   "publishConfig": {
