@@ -11,7 +11,6 @@
     "poststart": "grunt coverage",
     "test": "grunt test",
     "httptest": "mocha -R spec test/test.js",
-    "emailtest": "mocha -R spec test/emailtest.js",
     "clean": "rm -f controllers/* impls/* routes/* models/* && rm -rf tests"
   },
   "homepage": "https://github.com/aquajs/aquajs-microservice",
@@ -24,7 +23,6 @@
   },
   "dependencies": {
     "aquajs": "*",
-    "aquajs-logger": "*",
     "async": "*",
     "express": "*",
     "lodash": "^3.0.0",
