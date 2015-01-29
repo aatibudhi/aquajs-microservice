@@ -27,6 +27,7 @@
     "async": "*",
     "express": "*",
     "lodash": "^3.0.0",
+    "persist": "^0.2.7",
     "sails-mongo": "^0.10.5",
     "waterline": "^0.10.16"
   },
