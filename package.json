@@ -23,10 +23,13 @@
   },
   "dependencies": {
     "aquajs": "*",
+    "aquajs-swagger-ui": "*",
     "async": "*",
     "express": "*",
     "lodash": "^3.0.0",
-    "sails-mongo": "latest"
+    "persist": "^0.2.7",
+    "sails-mongo": "^0.10.5",
+    "waterline": "^0.10.16"
   },
   "devDependencies": {
     "grunt-mocha-istanbul": "^2.1.0",
