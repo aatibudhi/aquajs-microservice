@@ -43,6 +43,7 @@ var persistConf = {
 module.exports = {
     app: {
         name: 'aqua',
+		loadModel : true,
         logconfpath: path.join($dirPaths.configDir, 'env/log_config.json'),
         schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
         ormList:['waterline','persist'],
