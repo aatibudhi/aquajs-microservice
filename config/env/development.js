@@ -17,8 +17,8 @@ var wDBConf = {
         mongo: {
             adapter: 'mongo',
             module: 'sails-mongo',
-            host: 'localhost',
-            port: 27017,
+            host: process.env.HOST || 'localhost',
+            port: process.env.PORT || 27017,
             database: 'ramp'
         }
     }
