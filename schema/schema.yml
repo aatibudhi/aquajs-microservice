@@ -25,14 +25,15 @@ apis:
         paramType: body
         required: true
         description: Order to be added
-# For each model:
+
 models:
-#Model name
+#For each DB model, provide the name
  Orders:
     # id must be equal to apis.path.operations.requestClass
     id: Orders
     adapter: mongo
     connection : mongo
+    # Model-specific DB properties
     properties:
       id:
         type: int
