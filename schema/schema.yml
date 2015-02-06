@@ -3,9 +3,13 @@ description:
 version: 1.0.0
 # target changes depending on type of project created
 target: microservice
+# root host url for workflow
+host: sv2lxecxpxyqa02.corp.equinix.com
 apis:
 # Each path must be specified. (ex: /orders, /orders/{id})
 - path: /orders
+  # method-specific host overrides root host for workflow
+  host: sv2lxecxpxyqa02.corp.equinix.com:3000
   operations:
   # For each method associated with the path
   - httpMethod: POST

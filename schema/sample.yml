@@ -2,6 +2,7 @@ resourcePath: /Sample-Example-Order_App
 description: All about API
 version: 1.0.0
 target: microservice
+host: sv1lxecxpxyqa02.corp.equinix.com:3000
 apis:
 - path: /orders
   operations:
