@@ -1,7 +1,7 @@
 resourcePath:
 description:
-version: 1.0.0
-# target changes depending on type of project created
+version:
+# target property necessary for scaffolding--do not change
 target: microservice
 # root host url for workflow
 host: sv2lxecxpxyqa02.corp.equinix.com
