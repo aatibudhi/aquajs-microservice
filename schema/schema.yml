@@ -1,0 +1,47 @@
+resourcePath:
+description:
+version: 1.0.0
+# target changes depending on type of project created
+target: microservice
+apis:
+# Each path must be specified. (ex: /orders, /orders/{id})
+- path: /orders
+  operations:
+  # For each method associated with the path
+  - httpMethod: POST
+    # Relevant information regarding operation
+    summary: Add a new order
+    notes: adds new pizza order
+    responseClass: OrderAdd
+    requestClass: Orders
+    # the method name as it will appear in the scaffolded controller
+    nickname: postOrder
+    consumes:
+      - application/json
+    #any necessary parameters depending on operation requirements
+    parameters:
+      - name: body
+        dataType: Orders
+        paramType: body
+        required: true
+        description: Order to be added
+# For each model:
+models:
+#Model name
+ Orders:
+    # id must be equal to apis.path.operations.requestClass
+    id: Orders
+    adapter: mongo
+    connection : mongo
+    properties:
+      id:
+        type: int
+        primaryKey: true
+      order_name:
+        type: string
+      order_contents:
+        type: string
+      quantity:
+        type: int
+      order_status:
+        type: string

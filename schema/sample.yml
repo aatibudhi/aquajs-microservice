@@ -1,6 +1,7 @@
 resourcePath: /Sample-Example-Order_App
 description: All about API
-version: "1.0.0"
+version: 1.0.0
+target: microservice
 apis:
 - path: /orders
   operations:
