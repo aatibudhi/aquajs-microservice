@@ -4,12 +4,12 @@ version:
 # target property necessary for scaffolding--do not change
 target: microservice
 # root host url for workflow
-host: sv2lxecxpxyqa02.corp.equinix.com
+host: localhost:8090
 apis:
 # Each path must be specified. (ex: /orders, /orders/{id})
 - path: /orders
   # method-specific host overrides root host for workflow
-  host: sv2lxecxpxyqa02.corp.equinix.com:3000
+  host: localhost:8090
   operations:
   # For each method associated with the path
   - httpMethod: POST
