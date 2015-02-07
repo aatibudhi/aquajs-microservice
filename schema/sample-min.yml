@@ -6,7 +6,5 @@ target: microservice
 # root host url for workflow
 host: localhost:8090
 
-# routes and models go here
-
-# For example, see:
+# apis and models go below; for reference see:
 # http://wiki.corp.equinix.com/confluence/display/innovation/YAML+Specifications+for+Scaffolding+and+TDD+Enforcement
