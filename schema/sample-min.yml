@@ -1,0 +1,10 @@
+resourcePath:
+description:
+version:
+# target property necessary for scaffolding--do not change
+target: microservice
+# root host url for workflow
+host: localhost:8090
+
+# apis and models go below; for reference see:
+# http://wiki.corp.equinix.com/confluence/display/innovation/YAML+Specifications+for+Scaffolding+and+TDD+Enforcement
