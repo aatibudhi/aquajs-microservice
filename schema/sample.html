@@ -1,7 +1,7 @@
 resourcePath: /Sample-Example-Order_App
 description: All about API
 version: 1.0.0
-target: microservice
+target: {{packageType}}
 host: localhost:8090
 # apis and models go below; for reference see:
 # http://wiki.corp.equinix.com/confluence/display/innovation/YAML+Specifications+for+Scaffolding+and+TDD+Enforcement
@@ -15,7 +15,7 @@ apis:
     requestClass: Orders
     nickname: getOrders
     consumes:
-      - text/json
+    - text/json
   - httpMethod: POST
     summary: Add a new order
     notes:  adds new pizza order
@@ -23,13 +23,13 @@ apis:
     requestClass: Orders
     nickname: postOrder
     consumes:
-      - application/json
+    - application/json
     parameters:
-      - name: body
-        dataType: Orders
-        paramType: body
-        required: true
-        description: Order to be added
+    - name: body
+      dataType: Orders
+      paramType: body
+      required: true
+      description: Order to be added
 - path: /orders/{id}
   operations:
   - httpMethod: GET
@@ -39,13 +39,13 @@ apis:
     requestClass: Orders
     nickname: getOrderById
     consumes:
-      - text/json
+    - text/json
     parameters:
-      - name: id
-        dataType: integer
-        paramType: path
-        required: true
-        description: Pizza Order Id to be fetched
+    - name: id
+      dataType: integer
+      paramType: path
+      required: true
+      description: Pizza Order Id to be fetched
   - httpMethod: DELETE
     summary: Delete the particular  pizza order by id
     notes: Delete an pizza order with specified id
@@ -53,13 +53,13 @@ apis:
     requestClass: Orders
     nickname: deleteOrderById
     consumes:
-      - text/json
+    - text/json
     parameters:
-      - name: id
-        dataType: integer
-        paramType: path
-        required: true
-        description: Order Id for pizza to be deleted
+    - name: id
+      dataType: integer
+      paramType: path
+      required: true
+      description: Order Id for pizza to be deleted
   - httpMethod: PUT
     summary: Update the particular pizza order by id
     notes: updates an pizza order with specified id
@@ -67,19 +67,19 @@ apis:
     requestClass: Orders
     nickname: updateOrderById
     consumes:
-      - application/json
+    - application/json
     parameters:
-      - name: id
-        dataType: integer
-        paramType: path
-        required: true
-        description: Order Id for pizza  to be updated
+    - name: id
+      dataType: integer
+      paramType: path
+      required: true
+      description: Order Id for pizza  to be updated
 
-      - name: body
-        dataType: Orders
-        paramType: body
-        required: true
-        description: Order for pizza  to be updated
+    - name: body
+      dataType: Orders
+      paramType: body
+      required: true
+      description: Order for pizza  to be updated
 - path: /pizza/{id}
   operations:
   - httpMethod: GET
@@ -89,13 +89,13 @@ apis:
     requestClass: Pizza
     nickname: getPizzaById
     consumes:
-      - text/json
+    - text/json
     parameters:
-      - name: id
-        dataType: integer
-        paramType: path
-        required: true
-        description: pizza Oder Id to be fetched
+    - name: id
+      dataType: integer
+      paramType: path
+      required: true
+      description: pizza Oder Id to be fetched
 - path: /pizza
   operations:
   - httpMethod: POST
@@ -105,16 +105,16 @@ apis:
     requestClass: Pizza
     nickname: postPizza
     consumes:
-      - application/json
+    - application/json
     parameters:
-      - name: body
-        dataType: Pizza
-        paramType: body
-        required: true
-        description: Pizza to be added
+    - name: body
+      dataType: Pizza
+      paramType: body
+      required: true
+      description: Pizza to be added
 
 models:
- Orders:
+  Orders:
     id: Orders
     adapter: mongo
     connection : mongo
@@ -130,27 +130,27 @@ models:
         type: int
       order_status:
         type: string
- OrderAdd:
+  OrderAdd:
     id: OrderAdd
     properties:
       id:
         type: int
       orderName:
         type: string
- Pizza:
+  Pizza:
     id: Pizza
     adapter: mongo
     connection : mongo
     properties:
-       id:
-         type: int
-       pizza_name:
-         type: string
-       pizza_contents:
-         type: string
-       pizza_size:
-         type: int
- Status:
+      id:
+        type: int
+    pizza_name:
+      type: string
+    pizza_contents:
+      type: string
+    pizza_size:
+      type: int
+  Status:
     id: Status
     properties:
       statusInfo:
