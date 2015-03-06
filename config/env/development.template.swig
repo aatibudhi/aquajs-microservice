@@ -42,10 +42,10 @@ var persistConf = {
 
 var monitorConf = {
   id: '{{projectName}}' || 'service',
-  groupid: '{{projectName}}' || 'Group 1',
+  groupid: '',
   schedule: '*/5 * * * * *',
-  eventHost: 'localhost',
-  eventPort: '5555'
+  eventHost: process.env.MON_HOST || 'localhost',
+  eventPort: process.env.MON_PORT || '5555'
 };
 
 module.exports = {
