@@ -9,10 +9,8 @@
 var path = require('path');
 
 module.exports = {
-    //db: 'mongodb://localhost/aquajs-cli',
-    app: {
-        name: 'aqua',
-        logconfpath: path.join($dirPaths.configDir, 'env/log_config.json')
-    }
-
+  app: {
+     name: '{{projectName}}',
+     logconfpath: path.join($dirPaths.configDir, 'env/log_config.json')
+  }
 };
