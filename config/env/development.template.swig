@@ -40,14 +40,6 @@ var persistConf = {
   }
 };
 
-var monitorConf = {
-  id: '{{projectName}}' || 'service',
-  groupid: '',
-  schedule: '*/5 * * * * *',
-  eventHost: process.env.MON_HOST || 'localhost',
-  eventPort: process.env.MON_PORT || '5555'
-};
-
 module.exports = {
   app: {
     name: '{{projectName}}',
@@ -55,7 +47,6 @@ module.exports = {
     logconfpath: path.join($dirPaths.configDir, 'env/log_config.json'),
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
     ormList: ['waterline', 'persist'],
-    dbConfList: [wDBConf, persistConf],
-    monitor: monitorConf
+    dbConfList: [wDBConf, persistConf]
   }
 };

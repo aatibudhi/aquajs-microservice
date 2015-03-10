@@ -3,14 +3,13 @@
  * production configuration file
  * pass the database configuration, app name ,
  * log config and scheduler config and other boolean flags for production env
- *
  */
 
 var path = require('path');
 
 module.exports = {
   app: {
-     name: '{{projectName}}',
-     logconfpath: path.join($dirPaths.configDir, 'env/log_config.json')
+    name: '{{projectName}}',
+    logconfpath: path.join($dirPaths.configDir, 'env/log_config.json')
   }
 };
