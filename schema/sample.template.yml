@@ -144,12 +144,12 @@ models:
     properties:
       id:
         type: int
-    pizza_name:
-      type: string
-    pizza_contents:
-      type: string
-    pizza_size:
-      type: int
+      pizza_name:
+        type: string
+      pizza_contents:
+        type: string
+      pizza_size:
+        type: int
   Status:
     id: Status
     properties:
