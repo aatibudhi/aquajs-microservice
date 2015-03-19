@@ -11,7 +11,7 @@ var path = require('path');
 var wDBConf = {
   adapters: {
     'default': require('sails-mongo'),
-    mongo: require('sails-mongo')
+    mongo-orm: require('sails-mongo')
   },
   connections: {
     mongo: {
