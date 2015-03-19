@@ -11,11 +11,11 @@ var path = require('path');
 var wDBConf = {
   adapters: {
     'default': require('sails-mongo'),
-    'mongo-orm': require('sails-mongo')
+    mongo: require('sails-mongo')
   },
   connections: {
     mongo: {
-      adapter: 'mongo-orm',
+      adapter: 'mongo',
       module: 'sails-mongo',
       host: process.env.HOST || 'localhost',
       port: process.env.PORT || 27017,
@@ -44,7 +44,7 @@ module.exports = {
   app: {
     name: '{{projectName}}',
     loadModel: true,
-    logconfpath: path.join($dirPaths.configDir, 'env/development_log_config.json'),
+    logconfpath: path.join($dirPaths.configDir, 'env/local_log_config.json'),
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
     ormList: ['waterline', 'persist'],
     dbConfList: [wDBConf, persistConf]

@@ -10,6 +10,6 @@ var path = require('path');
 module.exports = {
   app: {
     name: '{{projectName}}',
-    logconfpath: path.join($dirPaths.configDir, 'env/log_config.json')
+    logconfpath: path.join($dirPaths.configDir, 'env/production_log_config.json')
   }
 };
