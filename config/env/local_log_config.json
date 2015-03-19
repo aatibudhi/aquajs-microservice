@@ -1,0 +1,14 @@
+{
+  "logConfig": {
+    "console": {
+      "level": "info",
+      "colorize": true
+    },
+    "rollingFile": {
+      "level": "info",
+      "datePattern" : ".yyyy-MM-dd",
+      "filename": "application.log",
+      "colorize": true
+    }
+  }
+}

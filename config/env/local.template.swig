@@ -44,7 +44,7 @@ module.exports = {
   app: {
     name: '{{projectName}}',
     loadModel: true,
-    logconfpath: path.join($dirPaths.configDir, 'env/development_log_config.json'),
+    logconfpath: path.join($dirPaths.configDir, 'env/local_log_config.json'),
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
     ormList: ['waterline', 'persist'],
     dbConfList: [wDBConf, persistConf]
