@@ -11,11 +11,11 @@ var path = require('path');
 var wDBConf = {
   adapters: {
     'default': require('sails-mongo'),
-    mongo-orm: require('sails-mongo')
+    'mongo-orm': require('sails-mongo')
   },
   connections: {
     mongo: {
-      adapter: 'mongo',
+      adapter: 'mongo-orm',
       module: 'sails-mongo',
       host: process.env.HOST || 'localhost',
       port: process.env.PORT || 27017,
