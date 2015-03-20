@@ -40,6 +40,8 @@ var persistConf = {
   }
 };
 
+var mailerConfig = require(path.join($dirPaths.configDir, 'mailer', 'email-config.json'));
+
 module.exports = {
   app: {
     name: '{{projectName}}',
@@ -47,6 +49,7 @@ module.exports = {
     logconfpath: path.join($dirPaths.configDir, 'env/log_config.json'),
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
     ormList: ['waterline', 'persist'],
-    dbConfList: [wDBConf, persistConf]
+    dbConfList: [wDBConf, persistConf],
+    mailer: mailerConfig
   }
 };
