@@ -116,7 +116,7 @@ apis:
 models:
   Orders:
     id: Orders
-    adapter: mongo
+    adapter: mongo-orm
     connection : mongo
     properties:
       id:
@@ -127,7 +127,7 @@ models:
       order_contents:
         type: string
       quantity:
-        type: int
+       type: int
       order_status:
         type: string
   OrderAdd:
@@ -139,19 +139,49 @@ models:
         type: string
   Pizza:
     id: Pizza
-    adapter: mongo
+    adapter: mongo-orm
     connection : mongo
     properties:
       id:
         type: int
-      pizza_name:
-        type: string
-      pizza_contents:
-        type: string
-      pizza_size:
-        type: int
+    pizza_name:
+      type: string
+    pizza_contents:
+      type: string
+    pizza_size:
+      type: int
   Status:
     id: Status
     properties:
       statusInfo:
         type: string
+
+configuration:
+  mongo:
+    adapter: mongo-orm
+    module: sails-mongo
+    host: process.env.HOST || localhost
+    port: process.env.PORT || 27017
+    database: ramp
+  persist:
+    driver: oracle
+    name: testConn
+    hostname: eceedevdb01.sv2.corp.equinix.com
+    user: ecee_int
+    password: welcome1
+    port: 1521
+    database: ECEEDEV1
+    pooling:
+      name: ecxPool
+      max: 2
+      min: 1
+      idleTimeoutMillis: 30000
+  oracle:
+    name: testConn
+    log: true
+    max: 10
+    hostname: eceedevdb01.sv2.corp.equinix.com
+    user: ecee_int
+    password: welcome1
+    port: 1521
+    database: ECEEDEV1
