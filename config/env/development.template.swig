@@ -47,6 +47,7 @@ module.exports = {
     logconfpath: path.join($dirPaths.configDir, 'env/development_log_config.json'),
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
     ormList: ['waterline', 'persist'],
-    dbConfList: [wDBConf, persistConf]
+    dbConfList: [wDBConf, persistConf],
+    mailer: require(path.join($dirPaths.configDir, 'mailer', 'email-config.json'))
   }
 };
