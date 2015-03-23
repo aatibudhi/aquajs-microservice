@@ -1,0 +1,13 @@
+{
+  "transport": {
+    "host": "",
+    "port": "",
+    "service": "",
+    "auth": {
+      "user": "",
+      "pass": ""
+    }
+  }
+}
+
+
