@@ -160,8 +160,8 @@ configuration:
   mongo:
     adapter: mongo-orm
     module: sails-mongo
-    host: process.env.HOST || localhost
-    port: process.env.PORT || 27017
+    host: localhost
+    port: 27017
     database: ramp
   persist:
     driver: oracle
