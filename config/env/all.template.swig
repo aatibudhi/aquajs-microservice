@@ -19,5 +19,6 @@ module.exports = {
   templateEngine: 'swig',
   enableWaterline:true,
   enablePersist:false,
-  monitor: monitorConf
+  monitor: monitorConf,
+  mailer: require(path.join($dirPaths.configDir, 'mailer', 'email-config.json'))
 };
