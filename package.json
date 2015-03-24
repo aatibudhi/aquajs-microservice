@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "aquajs": "*",
+    "aquajs-error": "*",
     "aquajs-swagger-ui": "*",
     "async": "*",
     "express": "*",
