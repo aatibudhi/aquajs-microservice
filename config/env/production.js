@@ -9,7 +9,7 @@ var path = require('path');
 
 module.exports = {
   app: {
-    name: 'p7',
+    name: 'sample',
     logconfpath: path.join($dirPaths.configDir, 'env/production_log_config.json'),
   }
 };
