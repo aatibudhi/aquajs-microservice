@@ -4,6 +4,7 @@
  * developer  can specify the app level flags as well to enable or disable some functionality
  */
 
+var path = require('path');
 
 var monitorConf = {
   id: '{{projectName}}',
