@@ -1,7 +1,7 @@
 "use strict";
 var path = require('path'),
-    aquajsErrorConstant = require(path.join($dirPaths.serverDir,'config','env','error-constants.json')),
-    extendedErrorConstant = require(path.join($dirPaths.serverDir,'config','env','extended-error-constants'));
+  aquajsErrorConstant = require(path.join($dirPaths.serverDir,'config','env','error-constants.json')),
+  extendedErrorConstant = require(path.join($dirPaths.serverDir,'config','env','extended-error-constants'));
 var AquaJsErrors = function () {
     var errors = [];
     this.errors = errors;
@@ -17,22 +17,8 @@ var AquaJsErrors = function () {
  * @see
  * @return {Aquajs Error Object}
  */
-AquaJsErrors.prototype.addError = function (configName, property, message, more_info) {
-    var errorConfig;
-    if (undefined !== aquajsErrorConstant || undefined !== extendedErrorConstant  ) {
-        errorConfig = aquajsErrorConstant[configName];
-        if(undefined == errorConfig) {
-            errorConfig = extendedErrorConstant[configName];
-        }
-        if(undefined == errorConfig) {
-			errorConfig = {} ;
-            errorConfig.status =400;
-            errorConfig.property = "";
-            errorConfig.message = "error key not found"
-            errorConfig.more_info = "please provide the correct error key";
-        }
-    }
-    this.errors.push(errorConfig);
+AquaJsErrors.prototype.addError = function () {
+    this.errors.push(arguments);
 };
 AquaJsErrors.prototype.getErrors = function () {
     return this.errors;
@@ -42,3 +28,4 @@ AquaJsErrors.prototype.hasError = function () {
 };
 
 module.exports = AquaJsErrors;
+
