@@ -54,7 +54,7 @@ var oracleConf = {
 
 module.exports = {
   app: {
-    name: 'p4',
+    name: 'sample',
     loadModel: true,
     logconfpath: path.join($dirPaths.configDir, 'env/local_log_config.json'),
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
