@@ -1,8 +1,9 @@
 /**
- * Created by verangasamy on 7/29/14.
- * production configuration file
- * pass the database configuration, app name ,
- * log config and scheduler config and other boolean flags for production env
+ * Sample production configuration file
+ *
+ * NOTE: This file will be rewritten when `aqua scaffold` is executed
+ *
+ * Exports app name, and log config for production environment
  */
 
 var path = require('path');

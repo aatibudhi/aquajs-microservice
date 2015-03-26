@@ -1,10 +1,11 @@
 /**
- * Created by verangasamy on 7/29/14.
- * development configuration file
- * pass the database configuration, app name ,
- * log config and scheduler config and other boolean flags for production env
- * We also provide the database initialization configuration for waterline and persist
+ * Sample local configuration file
  *
+ * NOTE: This file will be rewritten when `aqua scaffold` is executed
+ *
+ * Exports the database configuration, app name,
+ * log config and scheduler config and other boolean flags for local env
+ * We also provide the database initialization configuration for waterline and persist
  */
 
 var path = require('path');

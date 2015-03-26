@@ -2,6 +2,7 @@ var _ = require('lodash'),
     fs = require('fs'),
     path = require('path');
 
+//Default to 'local' environment unless another is specified and a matching file is found in 'config/env/'
 process.env.NODE_ENV = ~fs.readdirSync(path.join($dirPaths.configDir, 'env')).map(function(file) {
   return file.slice(0, -3);
 }).indexOf(process.env.NODE_ENV) ? process.env.NODE_ENV : 'local';

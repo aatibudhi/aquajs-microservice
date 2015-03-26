@@ -1,3 +1,5 @@
+// Common paths that can be referenced with the global $dirPaths variable
+
 var path = require('path');
 
 var serverDir = exports.serverDir = process.cwd();
