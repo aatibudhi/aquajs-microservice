@@ -18,8 +18,7 @@ module.exports = {
   root: process.cwd(),
   port: process.env.PORT || 8090,
   templateEngine: 'swig',
-  enableWaterline:true,
-  enablePersist:false,
+  connectionType: 'orm-nosql', //'orm-nosql' for mongo-orm and 'orm-sql' for oracle-orm
   monitor: monitorConf,
   mailer: require(path.join($dirPaths.configDir, 'mailer', 'email-config.json'))
 };
