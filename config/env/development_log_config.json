@@ -1,23 +1,24 @@
 {
-  "logConfig": {
-    "console": {
-      "level": "info",
-      "colorize": true
-    },
-    "rollingFile": {
-      "level": "info",
-      "datePattern" : ".yyyy-MM-dd",
-      "filename": "application.log",
-      "colorize": true
-    },
-    "email": {
-      "level": "error",
-      "to": "",
-      "from": "ramp@equinix.com",
-      "host": "mailhost.corp.equinix.com",
-      "port": "25",
-      "username": "",
-      "password": ""
-    }
+"logConfig": {
+"console": {
+"level": "info",
+"colorize": true
+},
+"rollingFile": {
+"level": "info",
+"datePattern" : ".yyyy-MM-dd",
+"filename": "application.log",
+"colorize": true
+},
+  "email": {
+    "level": "error",
+    "to": "",
+    "service":"",
+    "from": "ramp@equinix.com",
+    "host": "mailhost.corp.equinix.com",
+    "port": "25",
+    "username": "",
+    "password": ""
   }
+}
 }

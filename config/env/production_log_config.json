@@ -13,6 +13,7 @@
     "email": {
       "level": "error",
       "to": "",
+      "service":"",
       "from": "ramp@equinix.com",
       "host": "mailhost.corp.equinix.com",
       "port": "25",
