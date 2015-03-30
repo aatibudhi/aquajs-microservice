@@ -9,6 +9,15 @@
       "datePattern" : ".yyyy-MM-dd",
       "filename": "application.log",
       "colorize": true
+    },
+    "email": {
+      "level": "error",
+      "to": "",
+      "from": "ramp@equinix.com",
+      "host": "mailhost.corp.equinix.com",
+      "port": "25",
+      "username": "",
+      "password": ""
     }
   }
 }
