@@ -1,24 +1,32 @@
 {
-"logConfig": {
-"console": {
-"level": "info",
-"colorize": true
-},
-"rollingFile": {
-"level": "info",
-"datePattern" : ".yyyy-MM-dd",
-"filename": "application.log",
-"colorize": true
-},
-  "email": {
-    "level": "error",
-    "to": "",
-    "service":"",
-    "from": "ramp@equinix.com",
-    "host": "mailhost.corp.equinix.com",
-    "port": "25",
-    "username": "",
-    "password": ""
+  "logConfig": {
+    "console": {
+      "level": "info",
+      "colorize": true
+    },
+    "rollingFile": {
+      "level": "info",
+      "datePattern" : ".yyyy-MM-dd",
+      "filename": "application.log",
+      "colorize": true
+    },
+    "email": {
+      "level": "error",
+      "to": "nambekar@equinix.com",
+      "service":"Gmail",
+      "from": "uma.more96@gmail.com",
+      "host": "",
+      "port": "25",
+      "username": "uma.more96@gmail.com",
+      "password": "scootypep",
+      "transport": {
+        "service": "Gmail",
+        "auth": {
+          "user": "uma.more96@gmail.com",
+          "pass": "scootypep"
+        }
+      }
+    }
+
   }
-}
 }
