@@ -12,18 +12,17 @@
     },
     "email": {
       "level": "error",
-      "to": "nambekar@equinix.com",
-      "service":"Gmail",
-      "from": "uma.more96@gmail.com",
+      "to": "xyz@gmail.com",
+      "from": "xyz@gmail.com",
       "host": "",
-      "port": "25",
-      "username": "uma.more96@gmail.com",
-      "password": "scootypep",
+      "port": "",
+      "username": "xyz@gmail.com",
+      "password": "****",
       "transport": {
-        "service": "Gmail",
+        "service": "",
         "auth": {
-          "user": "uma.more96@gmail.com",
-          "pass": "scootypep"
+          "user": "xyz@gmail.com",
+          "pass": "****"
         }
       }
     }
