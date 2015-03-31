@@ -185,3 +185,13 @@ configuration:
     password: welcome1
     port: 1521
     database: ECEEDEV1
+
+  mailer:
+    host: mailhost.corp.equinix.com
+    port: 25
+    service:
+    auth:
+      user:
+      pass:
+
+
