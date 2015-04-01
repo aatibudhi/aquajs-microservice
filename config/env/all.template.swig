@@ -20,5 +20,5 @@ module.exports = {
   templateEngine: 'swig',
   connectionType: 'orm-nosql', //'orm-nosql' for mongo-orm and 'orm-sql' for oracle-orm
   monitor: monitorConf,
-  mailer: require(path.join($dirPaths.configDir, 'mailer', 'email-config.json'))
+  mailer: require(path.join($dirPaths.configDir, 'email-config.json'))
 };
