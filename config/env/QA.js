@@ -51,7 +51,22 @@ var oracleConf = {
   "port": 1521,
   "database": "ECEEDEV1"
 };
-
+var mailerConf = {
+  "level": "error",
+  "to": "aqaujsadmin@equninix.com",
+  "from": "aqaujsadmin@equninix.com",
+  "host": "",
+  "port": "",
+  "username": "aqaujsadmin@equninix.com",
+  "password": "****",
+  "transport": {
+    "service": "",
+    "auth": {
+      "user": "aqaujsadmin@equninix.com",
+      "pass": "****"
+    }
+  }
+};
 module.exports = {
   app: {
     name: 'sample',
@@ -59,6 +74,13 @@ module.exports = {
     logconfpath: path.join($dirPaths.configDir, 'env/QA_log_config.json'),
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
     ormList: ['waterline', 'persist'],
-    dbConfList: [mongoConf, persistConf, oracleConf]
+    connectionConfig: {
+    {%- for conf in confList -%}
+       {{conf}} : {{conf}}{%- if loop.length >1 and !loop.last -%}
+        ,
+      {%- endif -%}
+    {%- endfor -%}
+    },
+    mailer: require(path.join($dirPaths.configDir, 'email-config.json'))
   }
 };
