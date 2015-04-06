@@ -22,11 +22,11 @@
     "url": "https://github.com/aquajs/aquajs-microservice/issues"
   },
   "dependencies": {
-    "aquajs": "*",
-    "aquajs-error": "*",
-    "aquajs-swagger-ui": "*",
-    "async": "*",
-    "express": "*",
+    "aquajs": "latest",
+    "aquajs-error": "latest",
+    "aquajs-swagger-ui": "latest",
+    "async": "latest",
+    "express": "latest",
     "lodash": "^3.0.0",
     "persist": "^0.2.7",
     "sails-mongo": "^0.10.5",
