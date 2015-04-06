@@ -1,31 +1,25 @@
 {
   "logConfig": {
-    "console": {
-      "level": "info",
-      "colorize": true
-    },
-    "rollingFile": {
-      "level": "info",
-      "datePattern" : ".yyyy-MM-dd",
-      "filename": "application.log",
-      "colorize": true
-    },
-    "email": {
-      "level": "error",
-      "to": "xyz@gmail.com",
-      "from": "xyz@gmail.com",
-      "host": "",
-      "port": "",
-      "username": "xyz@gmail.com",
-      "password": "****",
-      "transport": {
-        "service": "",
-        "auth": {
-          "user": "xyz@gmail.com",
-          "pass": "****"
-        }
+      "console": {
+        "level": "info",
+        "colorize": true
+      },
+      "rollingFile": {
+        "level": "info",
+        "datePattern" : ".yyyy-MM-dd",
+        "filename": "application.log",
+        "colorize": true
+      },
+      "email": {
+        "host": "",//"smtp.gmail.com",
+        "port": "",//"465",
+        "ssl": true,
+        "to": "aqaujsadmin@equninix.com",
+        "from": "aqaujsadmin@equninix.com",
+        "username": "",
+        "password": "",
+        "subject": "AquaJS Error:",
+        "level": "error"
       }
-    }
-
   }
 }
