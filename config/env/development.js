@@ -76,11 +76,10 @@ module.exports = {
     schedulerconfpath: path.join($dirPaths.configDir, 'env/scheduler-conf.json'),
     ormList: ['waterline', 'persist'],
     connectionConfig: {
-    {%- for conf in confList -%}
-       {{conf}} : {{conf}}{%- if loop.length >1 and !loop.last -%}
-        ,
-      {%- endif -%}
-    {%- endfor -%}
+      mongoConf: mongoConf,
+      aquaOracleConf: aquaOracleConf,
+      oracleConf: oracleConf,
+      mailerConf: mailerConf
     },
     mailer: require(path.join($dirPaths.configDir, 'email-config.json'))
   }
