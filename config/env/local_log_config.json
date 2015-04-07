@@ -11,8 +11,8 @@
         "colorize": true
       },
       "email": {
-        "host": "",//"smtp.gmail.com",
-        "port": "",//"465",
+        "host": "",
+        "port": "",
         "ssl": true,
         "to": "aqaujsadmin@equninix.com",
         "from": "aqaujsadmin@equninix.com",
