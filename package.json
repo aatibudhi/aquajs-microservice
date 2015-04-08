@@ -27,6 +27,7 @@
     "aquajs-swagger-ui": "latest",
     "async": "latest",
     "express": "latest",
+    "js-select": "^0.6.0",
     "lodash": "^3.0.0",
     "persist": "^0.2.7",
     "sails-mongo": "^0.10.5",
