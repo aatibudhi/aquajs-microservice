@@ -127,7 +127,7 @@ models:
       order_contents:
         type: string
       quantity:
-       type: int
+        type: int
       order_status:
         type: string
   OrderAdd:
@@ -144,12 +144,12 @@ models:
     properties:
       id:
         type: int
-    pizza_name:
-      type: string
-    pizza_contents:
-      type: string
-    pizza_size:
-      type: int
+      pizza_name:
+        type: string
+      pizza_contents:
+        type: string
+      pizza_size:
+        type: int
   Status:
     id: Status
     properties:
