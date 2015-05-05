@@ -155,43 +155,36 @@ models:
     properties:
       statusInfo:
         type: string
-
+#add the configuration details for datbase
 configuration:
   mongo:
     adapter: mongo-orm
     module: sails-mongo
     host: localhost
     port: 27017
-    database: ramp
+    database: #db name
   persist:
     driver: oracle
-    name: testConn
-    hostname: eceedevdb01.sv2.corp.equinix.com
-    user: ecee_int
-    password: welcome1
-    port: 1521
-    database: ECEEDEV1
+    name:
+    hostname:
+    user:
+    password:
+    port:
+    database: #dbname
     pooling:
-      name: ecxPool
-      max: 2
-      min: 1
+      name:
+      max:
+      min:
       idleTimeoutMillis: 30000
   oracle:
-    name: testConn
+    name:
     log: true
     max: 10
-    hostname: eceedevdb01.sv2.corp.equinix.com
-    user: ecee_int
-    password: welcome1
-    port: 1521
-    database: ECEEDEV1
+    hostname:
+    user:
+    password:
+    port:
+    database: #dbname
 
-  mailer:
-    host: mailhost.corp.equinix.com
-    port: 25
-    service:
-    auth:
-      user:
-      pass:
 
 
