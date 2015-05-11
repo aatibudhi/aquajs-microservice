@@ -9,17 +9,6 @@
         "datePattern" : ".yyyy-MM-dd",
         "filename": "application.log",
         "colorize": true
-      },
-      "email": {
-        "host": "",
-        "port": "",
-        "ssl": true,
-        "to": "aqaujsadmin@equninix.com",
-        "from": "aqaujsadmin@equninix.com",
-        "username": "",
-        "password": "",
-        "subject": "AquaJS Error:",
-        "level": "error"
       }
   }
 }
