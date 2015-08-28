@@ -196,60 +196,60 @@
     "moreinfo": "The password cannot be changed at this time"
   },
   "internalServerError": {
-      "status": 500,
-      "code": 50001,
-      "property": "",
-      "message": "Something went wrong. Please try after some time",
-      "moreinfo": "Something went wrong. Please try after some time"
-    },
-    "INPUT_DATA_MISSING" :{
-      "status": 400,
-      "code": 400001,
-      "message":"Input Data ({0}) is missing",
-      "moreinfo":"Input Data is  missing"
-    },
-    "REQUIRED_FIELD_EMPTY" :{
-      "status": 400,
-      "code": 400002,
-      "message":"Required field {1} : {0}  is empty",
-      "moreinfo":"Required field is empty"
-    },
-    "REQUIRED_FIELD_MISSING" :{
-      "status": 400,
-      "code": 400003,
-      "message":"Required field {1} : {0}  is missing",
-      "moreinfo":"Required field is missing"
-    },
-    "INVALID_FIELD_VALUE" :{
-      "status": 400,
-      "code": 400004,
-      "message":"Required field {1} : {0}  has invalid data type",
-      "moreinfo":"Required field has invalid data type"
-    },
-    "INVALID_FIELD_EMAIL_TYPE" :{
-      "status": 400,
-      "code": 400005,
-      "message":"Required field {1} : {0}  is not a valid Email",
-      "moreinfo":"Required field is not a valid Email"
-    },
-    "INVALID_FIELD_DATE_TYPE" :{
-      "status": 400,
-      "code": 400006,
-      "message":"Required field {1} : {0}  is not a valid Date",
-      "moreinfo":"Required field is not a valid Date"
-    },
-    "INVALID_FIELD_RANGE": {
-      "status": 400,
-      "code": 400007,
-      "property": "",
-      "message":"Required field {1} : {0} has invalid range",
-      "moreinfo":"Required field {1} : {0} has invalid range"
-    },
-    "UNEXPECTED_ERROR_VALIDATION": {
-      "status": 400,
-      "code": 400008,
-      "property": "",
-      "message":"Unexpected error occured in Validation",
-      "moreinfo":"Unexpected error occured in Validation"
+    "status": 500,
+    "code": 50001,
+    "property": "",
+    "message": "Something went wrong. Please try after some time",
+    "moreinfo": "Something went wrong. Please try after some time"
+  },
+  "INPUT_DATA_MISSING" :{
+    "status": 400,
+    "code": 400001,
+    "message":"Input Data ({0}) is missing",
+    "moreinfo":"Input Data is  missing"
+  },
+  "REQUIRED_FIELD_EMPTY" :{
+    "status": 400,
+    "code": 400002,
+    "message":"Required field {1} : {0}  is empty",
+    "moreinfo":"Required field is empty"
+  },
+  "REQUIRED_FIELD_MISSING" :{
+    "status": 400,
+    "code": 400003,
+    "message":"Required field {1} : {0}  is missing",
+    "moreinfo":"Required field is missing"
+  },
+  "INVALID_FIELD_VALUE" :{
+    "status": 400,
+    "code": 400004,
+    "message":"Required field {1} : {0}  has invalid data type",
+    "moreinfo":"Required field has invalid data type"
+  },
+  "INVALID_FIELD_EMAIL_TYPE" :{
+    "status": 400,
+    "code": 400005,
+    "message":"Required field {1} : {0}  is not a valid Email",
+    "moreinfo":"Required field is not a valid Email"
+  },
+  "INVALID_FIELD_DATE_TYPE" :{
+    "status": 400,
+    "code": 400006,
+    "message":"Required field {1} : {0}  is not a valid Date",
+    "moreinfo":"Required field is not a valid Date"
+  },
+  "INVALID_FIELD_RANGE": {
+    "status": 400,
+    "code": 400007,
+    "property": "",
+    "message":"Required field {1} : {0} has invalid range",
+    "moreinfo":"Required field {1} : {0} has invalid range"
+  },
+  "UNEXPECTED_ERROR_VALIDATION": {
+    "status": 400,
+    "code": 400008,
+    "property": "",
+    "message":"Unexpected error occured in Validation",
+    "moreinfo":"Unexpected error occured in Validation"
   }
 }
