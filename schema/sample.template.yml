@@ -1,7 +1,7 @@
 resourcePath: /Sample-Example-Order_App
 description: All about API
 version: 1.0.0
-target: {{packageType}}
+target: microservice
 host: localhost:8090
 # apis and models go below; for reference see:
 # http://wiki.corp.equinix.com/confluence/display/innovation/YAML+Specifications+for+Scaffolding+and+TDD+Enforcement
@@ -26,7 +26,8 @@ apis:
     - application/json
     parameters:
     - name: body
-      dataType: object
+      $ref: Orders
+      dataType: body
       paramType: body
       required: true
       description: Order to be added
@@ -74,9 +75,9 @@ apis:
       paramType: path
       required: true
       description: Order Id for pizza  to be updated
-
     - name: body
-      dataType: object
+      dataType: body
+      $ref: Orders
       paramType: body
       required: true
       description: Order for pizza  to be updated
@@ -108,7 +109,8 @@ apis:
     - application/json
     parameters:
     - name: body
-      dataType: object
+      dataType: body
+      $ref: Pizza
       paramType: body
       required: true
       description: Pizza to be added
@@ -120,41 +122,49 @@ models:
     connection : mongo
     properties:
       id:
-        type: int
+        dataType: int
         primaryKey: true
+        required: true
       order_name:
-        type: string
+        dataType: string
+        required: true
       order_contents:
-        type: string
+        dataType: string
+        required: true
       quantity:
-        type: int
+        dataType: int
       order_status:
-        type: string
+        dataType: string
+        required: true
   OrderAdd:
     id: OrderAdd
     properties:
       id:
-        type: int
+        dataType: int
       orderName:
-        type: string
+        dataType: string
   Pizza:
     id: Pizza
     adapter: mongo-orm
     connection : mongo
     properties:
       id:
-        type: int
+        dataType: int
+        required: true
       pizza_name:
-        type: string
+        dataType: string
+        required: true
       pizza_contents:
-        type: string
+        dataType: string
+        required: true
       pizza_size:
-        type: int
+        dataType: int
+        required: true
   Status:
     id: Status
     properties:
       statusInfo:
-        type: string
+        dataType: string
 #add the configuration details for datbase
 configuration:
   mongo:
