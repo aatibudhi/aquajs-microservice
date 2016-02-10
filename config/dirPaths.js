@@ -7,5 +7,5 @@ exports.modelsDir = path.join(serverDir, 'models/');
 exports.routesDir = path.join(serverDir, 'routes/');
 exports.controllersDir = path.join(serverDir, 'controllers/');
 exports.nodeModulesDir = path.join(serverDir, 'node_modules/');
-exports.testDir = path.join(serverDir,'test/');
-exports.utils = path.join(serverDir,'utils/');
+exports.testDir = path.join(serverDir,'test/');
+exports.utils = path.join(serverDir,'utils/');
