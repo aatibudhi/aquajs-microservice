@@ -13,6 +13,16 @@
     "httptest": "mocha -R spec test/test.js",
     "clean": "rm -f controllers/* impls/* routes/* models/* && rm -rf tests"
   },
+   "developers": [
+    "Venkat Rangasamy <vrangasamy@equinix.com>",
+    "Aswini Atibudhi <aatibudhi@equinix.com>",
+    "Tony Pujals <tpujals@equinix.com> (http://twitter.com/subfuzion)",
+    "Peter Svetlichny <psvetlichny@equinix.com> (http://twitter.com/p_svetlichny)",
+    "Uma More <umore@equinix.com>",
+    "Elcina Tuscano <etuscano@equinix.com>",
+    "Chakradhar Jonagam <cjonagam@equinix.com>",
+    "Namratha Ambekar <nambekar@equinix.com>"
+  ],
   "homepage": "https://github.com/aquajs/aquajs-microservice",
   "repository": {
     "type": "git",
